@@ -165,5 +165,7 @@ export const refreshUsersSession = async ({ sessionId, refreshToken }) => {
 
 export const getUserInfo = async function (userId) {
   const user = await UsersCollection.findById(userId);
+  console.log('getUserInfo service', user);
+
   return user;
 };

@@ -8,6 +8,7 @@ import {
 } from '../validation/auth.js';
 import {
   getRegisteredUserController,
+  infoUserController,
   loginUserController,
   logoutUserController,
   refreshUserSessionController,
@@ -16,6 +17,7 @@ import {
   resetPasswordController,
 } from '../controllers/auth.js';
 import { validateBody } from '../middlewares/validateBody.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
 
@@ -51,5 +53,7 @@ router.post(
 );
 
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
+
+router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
 
 export default router;

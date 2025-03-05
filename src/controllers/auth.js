@@ -1,5 +1,6 @@
 import { UsersCollection } from '../db/models/user.js';
 import {
+  getUserInfo,
   logoutUser,
   refreshUsersSession,
   registerUser,
@@ -8,6 +9,7 @@ import {
 } from '../services/auth.js';
 import { loginUser } from '../services/auth.js';
 import { ONE_DAY } from '../constants/index.js';
+import createHttpError from 'http-errors';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -102,5 +104,22 @@ export const refreshUserSessionController = async (req, res) => {
     data: {
       accessToken: session.accessToken,
     },
+  });
+};
+
+export const infoUserController = async (req, res, next) => {
+  const {
+    user: { id: userId },
+  } = req;
+
+  const userInfo = await getUserInfo(userId);
+
+  if (!userInfo) {
+    return next(createHttpError(404, 'User not found'));
+  }
+  res.json({
+    status: 200,
+    message: 'Successfully found user!',
+    data: userInfo,
   });
 };
