@@ -1,3 +1,7 @@
+import path from 'node:path';
+
+export const TEMPLATES_DIR = path.join(process.cwd(), 'src', 'templates');
+
 export const SMTP = {
   SMTP_HOST: 'SMTP_HOST',
   SMTP_PORT: 'SMTP_PORT',
