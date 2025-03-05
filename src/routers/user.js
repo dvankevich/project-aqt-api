@@ -7,6 +7,7 @@ import {
   resetPasswordSchema,
 } from '../validation/auth.js';
 import {
+  getRegisteredUserController,
   loginUserController,
   logoutUserController,
   refreshUserSessionController,
@@ -36,6 +37,11 @@ router.post(
   '/request-reset-email',
   validateBody(requestResetEmailSchema),
   ctrlWrapper(requestResetEmailController),
+);
+
+router.get(
+  '/public/registered-users',
+  ctrlWrapper(getRegisteredUserController),
 );
 
 router.post(
