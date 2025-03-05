@@ -1,3 +1,4 @@
+import { UsersCollection } from '../db/models/user.js';
 import { registerUser, requestResetToken } from '../services/auth.js';
 import { loginUser } from '../services/auth.js';
 
@@ -23,5 +24,13 @@ export const requestResetEmailController = async (req, res) => {
     message: 'Reset password email was successfully sent!',
     status: 200,
     data: {},
+  });
+};
+
+export const getRegisteredUserController = async (req, res) => {
+  const userCount = await UsersCollection.countDocuments();
+  res.json({
+    message: `Total count of registered users are ${userCount} `,
+    status: 200,
   });
 };

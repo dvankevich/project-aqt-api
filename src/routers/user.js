@@ -6,6 +6,7 @@ import {
   requestResetEmailSchema,
 } from '../validation/auth.js';
 import {
+  getRegisteredUserController,
   loginUserController,
   registerUserController,
   requestResetEmailController,
@@ -30,6 +31,11 @@ router.post(
   '/request-reset-email',
   validateBody(requestResetEmailSchema),
   ctrlWrapper(requestResetEmailController),
+);
+
+router.get(
+  '/public/registered-users',
+  ctrlWrapper(getRegisteredUserController),
 );
 
 export default router;
