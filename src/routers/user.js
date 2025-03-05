@@ -9,6 +9,7 @@ import {
 import {
   loginUserController,
   logoutUserController,
+  refreshUserSessionController,
   registerUserController,
   requestResetEmailController,
   resetPasswordController,
@@ -42,5 +43,7 @@ router.post(
   validateBody(resetPasswordSchema),
   ctrlWrapper(resetPasswordController),
 );
+
+router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
 export default router;
