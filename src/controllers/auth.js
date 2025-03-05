@@ -119,7 +119,7 @@ export const infoUserController = async (req, res, next) => {
   }
   res.json({
     status: 200,
-    message: 'Successfully found user!',
+    message: 'User found completely!',
     data: userInfo,
   });
 };
