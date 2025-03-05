@@ -20,10 +20,10 @@ router.post(
   ctrlWrapper(addAmountWaterController),
 );
 router.patch(
-  '/',
+  '/:cardId',
   validateBody(updateWaterSchema),
   ctrlWrapper(updateAmountWaterController),
 );
-router.delete('/', ctrlWrapper(deleteAmountWaterController));
+router.delete('/:cardId', ctrlWrapper(deleteAmountWaterController));
 
 export default router;

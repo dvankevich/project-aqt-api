@@ -2,18 +2,26 @@ import { model, Schema } from 'mongoose';
 
 const waterSchema = new Schema(
   {
-    volume: {
+    value: {
       type: Number,
       require: true,
+      default: 50,
     },
     date: {
+      type: String,
+      require: true,
+    },
+    time: {
       type: String,
       require: true,
     },
     userId: { type: Schema.Types.ObjectId, ref: 'users' },
   },
   {
-    timestamps: true,
+    timestamps: {
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    },
     versionKey: false,
   },
 );
