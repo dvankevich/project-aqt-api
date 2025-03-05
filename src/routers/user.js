@@ -8,6 +8,7 @@ import {
 } from '../validation/auth.js';
 import {
   loginUserController,
+  logoutUserController,
   registerUserController,
   requestResetEmailController,
   resetPasswordController,
@@ -27,6 +28,8 @@ router.post(
   validateBody(loginUserSchema),
   ctrlWrapper(loginUserController),
 );
+
+router.post('/logout', ctrlWrapper(logoutUserController));
 
 router.post(
   '/request-reset-email',
