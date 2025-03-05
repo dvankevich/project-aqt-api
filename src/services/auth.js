@@ -119,3 +119,7 @@ export const resetPassword = async (payload) => {
     { password: encryptedPassword },
   );
 };
+
+export const logoutUser = async (sessionId) => {
+  await SessionsCollection.deleteOne({ _id: sessionId });
+};
