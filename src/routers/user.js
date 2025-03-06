@@ -8,14 +8,17 @@ import {
 } from '../validation/auth.js';
 import {
   getRegisteredUserController,
+  infoUserController,
   loginUserController,
   logoutUserController,
+  patchUserController,
   refreshUserSessionController,
   registerUserController,
   requestResetEmailController,
   resetPasswordController,
 } from '../controllers/auth.js';
 import { validateBody } from '../middlewares/validateBody.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
 
@@ -51,5 +54,9 @@ router.post(
 );
 
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
+
+router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
+
+router.patch('/userinfo', authenticate, ctrlWrapper(patchUserController));
 
 export default router;
