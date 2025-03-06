@@ -1,6 +1,6 @@
 import express from 'express';
 import pino from 'pino-http';
-//import cors from 'cors';
+import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 import { getEnvVar } from './utils/getEnvVar.js';
@@ -22,8 +22,8 @@ export const startServer = () => {
       type: ['application/json', 'application/vnd.api+json'],
     }),
   );
-  // DISABLE CORS
-  // app.use(cors());
+
+  app.use(cors());
   app.use(cookieParser());
 
   app.use(
