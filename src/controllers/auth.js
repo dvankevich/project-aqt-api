@@ -12,6 +12,8 @@ import { loginUser } from '../services/auth.js';
 import { ONE_DAY } from '../constants/index.js';
 import createHttpError from 'http-errors';
 import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
+import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
+import { getEnvVar } from '../utils/getEnvVar.js';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -135,8 +137,13 @@ export const patchUserController = async (req, res, next) => {
   let photoUrl;
 
   if (photo) {
-    photoUrl = await saveFileToUploadDir(photo);
+    if (getEnvVar('ENABLE_CLOUDINARY') === 'true') {
+      photoUrl = await saveFileToCloudinary(photo);
+    } else {
+      photoUrl = await saveFileToUploadDir(photo);
+    }
   }
+
   const result = await patchUser(userId, {
     ...req.body,
     avatarUrl: photoUrl,
