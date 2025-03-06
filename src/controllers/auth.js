@@ -1,6 +1,8 @@
 import { UsersCollection } from '../db/models/user.js';
 import {
+  getUserInfo,
   logoutUser,
+  patchUser,
   refreshUsersSession,
   registerUser,
   requestResetToken,
@@ -8,6 +10,10 @@ import {
 } from '../services/auth.js';
 import { loginUser } from '../services/auth.js';
 import { ONE_DAY } from '../constants/index.js';
+import createHttpError from 'http-errors';
+import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
+import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
+import { getEnvVar } from '../utils/getEnvVar.js';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -102,5 +108,55 @@ export const refreshUserSessionController = async (req, res) => {
     data: {
       accessToken: session.accessToken,
     },
+  });
+};
+
+export const infoUserController = async (req, res, next) => {
+  const {
+    user: { id: userId },
+  } = req;
+
+  const userInfo = await getUserInfo(userId);
+
+  if (!userInfo) {
+    return next(createHttpError(404, 'User not found'));
+  }
+  res.json({
+    status: 200,
+    message: 'User found completely!',
+    data: userInfo,
+  });
+};
+
+export const patchUserController = async (req, res, next) => {
+  const {
+    user: { id: userId },
+  } = req;
+  const photo = req.file;
+
+  let photoUrl;
+
+  if (photo) {
+    if (getEnvVar('ENABLE_CLOUDINARY') === 'true') {
+      photoUrl = await saveFileToCloudinary(photo);
+    } else {
+      photoUrl = await saveFileToUploadDir(photo);
+    }
+  }
+
+  const result = await patchUser(userId, {
+    ...req.body,
+    avatarUrl: photoUrl,
+  });
+
+  if (!result) {
+    next(createHttpError(404, 'User not found'));
+    return;
+  }
+
+  res.json({
+    status: 200,
+    message: `Successfully patched a user!`,
+    data: result.user,
   });
 };

@@ -8,14 +8,18 @@ import {
 } from '../validation/auth.js';
 import {
   getRegisteredUserController,
+  infoUserController,
   loginUserController,
   logoutUserController,
+  patchUserController,
   refreshUserSessionController,
   registerUserController,
   requestResetEmailController,
   resetPasswordController,
 } from '../controllers/auth.js';
 import { validateBody } from '../middlewares/validateBody.js';
+import { authenticate } from '../middlewares/authenticate.js';
+import { upload } from '../middlewares/multer.js';
 
 const router = Router();
 
@@ -51,5 +55,14 @@ router.post(
 );
 
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
+
+router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
+
+router.patch(
+  '/userinfo',
+  authenticate,
+  upload.single('photo'),
+  ctrlWrapper(patchUserController),
+);
 
 export default router;
