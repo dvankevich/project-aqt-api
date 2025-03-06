@@ -1,0 +1,23 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Aqua track app
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description:
+    This is a documentation of Aqua track app
+tags:
+  - name: Users
+    description: Operations about users.
+  - name: Auth
+    description: Auth operations.
+servers:
+  - url: https://project-aqt-api.onrender.com/
+  - url: http://localhost:3000
+paths:
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
