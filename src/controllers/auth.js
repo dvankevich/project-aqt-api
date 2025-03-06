@@ -11,6 +11,7 @@ import {
 import { loginUser } from '../services/auth.js';
 import { ONE_DAY } from '../constants/index.js';
 import createHttpError from 'http-errors';
+import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -129,7 +130,17 @@ export const patchUserController = async (req, res, next) => {
   const {
     user: { id: userId },
   } = req;
-  const result = await patchUser(userId, req.body);
+  const photo = req.file;
+
+  let photoUrl;
+
+  if (photo) {
+    photoUrl = await saveFileToUploadDir(photo);
+  }
+  const result = await patchUser(userId, {
+    ...req.body,
+    avatarUrl: photoUrl,
+  });
 
   if (!result) {
     next(createHttpError(404, 'User not found'));
