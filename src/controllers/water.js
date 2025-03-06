@@ -5,10 +5,14 @@ import {
   getAmountWater,
   updateAmountWater,
 } from '../services/water.js';
+import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 
 export const addAmountWaterController = async (req, res) => {
+  console.log(req.user);
+  const userId = req.user._id;
+
   const { body } = req;
-  const data = await addAmountWater(body);
+  const data = await addAmountWater(body, userId);
   res.json({
     status: 201,
     message: 'Sucsesfully add amount water',
@@ -17,11 +21,11 @@ export const addAmountWaterController = async (req, res) => {
 };
 
 export const updateAmountWaterController = async (req, res) => {
+  const userId = req.user._id;
   const { cardId } = req.params;
-  console.log(cardId);
-
   const { body } = req;
-  const data = await updateAmountWater(body, cardId);
+  const data = await updateAmountWater(body, cardId, userId);
+
   res.json({
     status: 200,
     message: 'Sucsesfully updated amount water',
@@ -30,9 +34,10 @@ export const updateAmountWaterController = async (req, res) => {
 };
 
 export const deleteAmountWaterController = async (req, res) => {
+  const userId = req.user._id;
   const { cardId } = req.params;
 
-  const card = await deleteAmountWater(cardId);
+  const card = await deleteAmountWater(cardId, userId);
   if (!card) {
     notFoundCardHandler();
   }
@@ -40,7 +45,10 @@ export const deleteAmountWaterController = async (req, res) => {
 };
 
 export const getAmountWaterDayController = async (req, res) => {
-  const data = await getAmountWater();
+  const { page, perPage } = parsePaginationParams(req.query);
+
+  const userId = req.user._id;
+  const data = await getAmountWater({ userId, page, perPage });
   res.json({
     status: 200,
     message: 'Sucsesfully found amount water of the day',
