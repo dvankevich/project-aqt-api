@@ -2,6 +2,7 @@ import { UsersCollection } from '../db/models/user.js';
 import {
   getUserInfo,
   logoutUser,
+  patchUser,
   refreshUsersSession,
   registerUser,
   requestResetToken,
@@ -121,5 +122,23 @@ export const infoUserController = async (req, res, next) => {
     status: 200,
     message: 'User found completely!',
     data: userInfo,
+  });
+};
+
+export const patchUserController = async (req, res, next) => {
+  const {
+    user: { id: userId },
+  } = req;
+  const result = await patchUser(userId, req.body);
+
+  if (!result) {
+    next(createHttpError(404, 'User not found'));
+    return;
+  }
+
+  res.json({
+    status: 200,
+    message: `Successfully patched a user!`,
+    data: result.user,
   });
 };

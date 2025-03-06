@@ -11,6 +11,7 @@ import {
   infoUserController,
   loginUserController,
   logoutUserController,
+  patchUserController,
   refreshUserSessionController,
   registerUserController,
   requestResetEmailController,
@@ -55,5 +56,7 @@ router.post(
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
 router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
+
+router.patch('/userinfo', authenticate, ctrlWrapper(patchUserController));
 
 export default router;
