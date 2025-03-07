@@ -35,15 +35,18 @@ export const deleteAmountWater = async (cardId, userId) => {
 export const getAmountWater = async ({ userId, page, perPage }) => {
   const limit = perPage;
   const skip = (page - 1) * perPage;
-  const cardsByUser = await waterCollection.find(userId);
+
+  const cardsByUser = waterCollection.find({ userId: userId });
   const cardsQuery = waterCollection.find();
+
   const cardsCount = await waterCollection
     .find()
-
     .merge(cardsByUser)
     .merge(cardsQuery)
     .countDocuments();
+
   const cards = await cardsQuery.merge(cardsByUser).limit(limit).skip(skip);
+
   const paginData = paginationData(page, perPage, cardsCount);
 
   return { data: cards, ...paginData };
