@@ -9,8 +9,10 @@ import {
   getAmountWaterMonthController,
   updateAmountWaterController,
 } from '../controllers/water.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
+router.use(authenticate);
 
 router.get('/day', ctrlWrapper(getAmountWaterDayController));
 router.get('/month', ctrlWrapper(getAmountWaterMonthController));
