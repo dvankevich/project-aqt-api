@@ -13,13 +13,10 @@ import { swaggerDocs } from './middlewares/swaggerDocs.js';
 import router from './routers/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
+const APP_DOMAIN = getEnvVar('APP_DOMAIN');
 
 export const startServer = () => {
   const app = express();
-  const corsOptions = {
-    origin: 'http://localhost:5173',
-    credentials: true,
-  };
 
   app.use(
     express.json({
@@ -27,8 +24,18 @@ export const startServer = () => {
     }),
   );
 
-  app.use(cors(corsOptions));
   app.use(cookieParser());
+
+  // for cors testing
+  if (APP_DOMAIN == 'https://project-aqt-api.onrender.com') {
+    const corsOptions = {
+      origin: 'http://localhost:5173',
+      credentials: true,
+    };
+    app.use(cors(corsOptions));
+  } else {
+    app.use(cors());
+  }
 
   app.use(
     pino({
