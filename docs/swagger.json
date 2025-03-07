@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://project-aqt-api.onrender.com"
+      "url": "https://project-aqt-api-testing.onrender.com"
     },
     {
       "url": "http://localhost:3000"
@@ -29,9 +29,7 @@
   "paths": {
     "/users/register": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "register",
         "description": "register",
         "operationId": "register",
@@ -357,9 +355,7 @@
                                   "type": "string",
                                   "example": "password"
                                 },
-                                "example": [
-                                  "password"
-                                ]
+                                "example": ["password"]
                               },
                               "type": {
                                 "type": "string",
@@ -375,9 +371,7 @@
                                 "value": ""
                               },
                               "message": "\"password\" is not allowed to be empty",
-                              "path": [
-                                "password"
-                              ],
+                              "path": ["password"],
                               "type": "string.empty"
                             }
                           ]
@@ -410,9 +404,7 @@
                               "value": ""
                             },
                             "message": "\"password\" is not allowed to be empty",
-                            "path": [
-                              "password"
-                            ],
+                            "path": ["password"],
                             "type": "string.empty"
                           }
                         ],
@@ -557,9 +549,7 @@
     },
     "/users/login": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "login",
         "description": "login",
         "operationId": "login",
@@ -980,9 +970,7 @@
     },
     "/users/logout": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "logout",
         "description": "logout",
         "operationId": "logout",
@@ -1075,9 +1063,7 @@
     },
     "/users/refresh": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "refresh",
         "description": "refresh",
         "operationId": "refresh",
@@ -1219,9 +1205,7 @@
     },
     "/users/request-reset-email": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "request-reset-email",
         "description": "request-reset-email",
         "operationId": "requestResetEmail",
@@ -1372,9 +1356,7 @@
     },
     "/users/reset-password": {
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "reset-password",
         "description": "reset-password",
         "operationId": "resetPassword",
@@ -1656,9 +1638,7 @@
     },
     "/users/userinfo": {
       "get": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "userinfo",
         "description": "userinfo",
         "operationId": "userinfo",
@@ -1837,9 +1817,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "userinfo",
         "description": "userinfo",
         "operationId": "userinfo1",
@@ -2059,9 +2037,7 @@
     },
     "/water/day": {
       "get": {
-        "tags": [
-          "water"
-        ],
+        "tags": ["water"],
         "summary": "day",
         "description": "day",
         "operationId": "day",
@@ -2352,9 +2328,7 @@
     },
     "/water": {
       "post": {
-        "tags": [
-          "water"
-        ],
+        "tags": ["water"],
         "summary": "water",
         "description": "water",
         "operationId": "water",

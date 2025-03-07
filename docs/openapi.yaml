@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   contact: {}
 servers:
-- url: https://project-aqt-api.onrender.com
+- url: https://project-aqt-api-testing.onrender.com
 - url: http://localhost:3000
 paths:
   /users/register:
