@@ -28,13 +28,26 @@ export const registerUserController = async (req, res) => {
 export const loginUserController = async (req, res) => {
   const session = await loginUser(req.body);
 
+  // res.cookie('refreshToken', session.refreshToken, {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + ONE_DAY),
+  // });
+  // res.cookie('sessionId', session._id, {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + ONE_DAY),
+  // });
+
   res.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
+    sameSite: 'None', // Залиште цей параметр для підтримки крос-доменних запитів
+    // secure: true, // Приберіть або закоментуйте цей параметр для HTTP
   });
   res.cookie('sessionId', session._id, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
+    sameSite: 'None', // Залиште цей параметр для підтримки крос-доменних запитів
+    // secure: true, // Приберіть або закоментуйте цей параметр для HTTP
   });
 
   res.json({
