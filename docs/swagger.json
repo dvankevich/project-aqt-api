@@ -1,0 +1,2562 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "AquaTrackAPI",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://project-aqt-api.onrender.com"
+    },
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "users"
+    },
+    {
+      "name": "water"
+    }
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "register",
+        "description": "register",
+        "operationId": "register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "wuser03@dvankevich.pp.ua"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "register": {
+                  "value": {
+                    "email": "wuser03@dvankevich.pp.ua",
+                    "password": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "register",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c90abe7962c917-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "265"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:24:49 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"173-05PHcWJ5ygiT/vvg4AkaBuSlxHU\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "38a9fe5f-3b57-4b14"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67cabb61686216dc35c58a82"
+                        },
+                        "avatarUrl": {
+                          "type": "string",
+                          "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2025-03-07T09:24:49.399Z"
+                        },
+                        "dailyNorm": {
+                          "type": "number",
+                          "example": 1500
+                        },
+                        "dailySportTime": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "wuser01@dvankevich.pp.ua"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "example": "woman"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2025-03-07T09:24:49.399Z"
+                        },
+                        "weight": {
+                          "type": "number",
+                          "example": 0
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully registered a user!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 201
+                    }
+                  }
+                },
+                "examples": {
+                  "register": {
+                    "value": {
+                      "data": {
+                        "_id": "67cabb61686216dc35c58a82",
+                        "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png",
+                        "createdAt": "2025-03-07T09:24:49.399Z",
+                        "dailyNorm": 1500,
+                        "dailySportTime": 0,
+                        "email": "wuser01@dvankevich.pp.ua",
+                        "gender": "woman",
+                        "updatedAt": "2025-03-07T09:24:49.399Z",
+                        "weight": 0
+                      },
+                      "message": "Successfully registered a user!",
+                      "status": 201
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "register",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c90e8abcbec916-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "155"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:27:24 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"f1-blAD7FN1cZWHLs9WByB8fuADDQQ\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "2467ed4a-fc49-4e15"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "errors": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "context": {
+                                "type": "object",
+                                "properties": {
+                                  "key": {
+                                    "type": "string",
+                                    "example": "password"
+                                  },
+                                  "label": {
+                                    "type": "string",
+                                    "example": "password"
+                                  },
+                                  "value": {
+                                    "type": "string",
+                                    "example": ""
+                                  }
+                                }
+                              },
+                              "message": {
+                                "type": "string",
+                                "example": "\"password\" is not allowed to be empty"
+                              },
+                              "path": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "example": "password"
+                                },
+                                "example": [
+                                  "password"
+                                ]
+                              },
+                              "type": {
+                                "type": "string",
+                                "example": "string.empty"
+                              }
+                            }
+                          },
+                          "example": [
+                            {
+                              "context": {
+                                "key": "password",
+                                "label": "password",
+                                "value": ""
+                              },
+                              "message": "\"password\" is not allowed to be empty",
+                              "path": [
+                                "password"
+                              ],
+                              "type": "string.empty"
+                            }
+                          ]
+                        },
+                        "message": {
+                          "type": "string",
+                          "example": "Bad Request"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "BadRequestError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  }
+                },
+                "examples": {
+                  "register": {
+                    "value": {
+                      "data": {
+                        "errors": [
+                          {
+                            "context": {
+                              "key": "password",
+                              "label": "password",
+                              "value": ""
+                            },
+                            "message": "\"password\" is not allowed to be empty",
+                            "path": [
+                              "password"
+                            ],
+                            "type": "string.empty"
+                          }
+                        ],
+                        "message": "Bad Request"
+                      },
+                      "message": "BadRequestError",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "register",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f875596cca2d-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "65"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:12:20 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"4a-91SI7bM4a1lfW0t/b2l79ZLkfug\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "21567d1e-a559-4f23"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Email in use"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "ConflictError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 409
+                    }
+                  }
+                },
+                "examples": {
+                  "register": {
+                    "value": {
+                      "data": {
+                        "message": "Email in use"
+                      },
+                      "message": "ConflictError",
+                      "status": 409
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "login",
+        "description": "login",
+        "operationId": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "dvankevich@5pro-software.ne"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "Pa$$w0rd"
+                  }
+                }
+              },
+              "examples": {
+                "login": {
+                  "value": {
+                    "email": "dvankevich@5pro-software.ne",
+                    "password": "Pa$$w0rd"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "login",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f8cb785aca2d-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "111"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:12:34 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string",
+                  "example": "sessionId=j%3A%2267cab882686216dc35c58a71%22; Path=/; Expires=Sat, 08 Mar 2025 09:12:34 GMT; HttpOnly"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"7c-WnqwEUh8ct7mQsCCy9Y5FoIlpj8\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "272a8f12-1983-41ff"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "accessToken": {
+                          "type": "string",
+                          "example": "6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully logged in an user!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "login": {
+                    "value": {
+                      "data": {
+                        "accessToken": "6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW"
+                      },
+                      "message": "Successfully logged in an user!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "login",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c907eb291677bb-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "58"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:22:53 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"4e-ASANtesC5lIOvll+QiIuMlq0hb4\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "0bb45fcf-83ab-4525"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Unauthorized"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "login": {
+                    "value": {
+                      "data": {
+                        "message": "Unauthorized"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "login",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c908f7b84d77bb-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "65"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:23:36 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"4c-LpvGC5TK1u9Uktc9GoZ8/HXbYTc\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "f0bd26d8-5e4e-4f28"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "User not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "NotFoundError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 404
+                    }
+                  }
+                },
+                "examples": {
+                  "login": {
+                    "value": {
+                      "data": {
+                        "message": "User not found"
+                      },
+                      "message": "NotFoundError",
+                      "status": 404
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/logout": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "logout",
+        "description": "logout",
+        "operationId": "logout",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "logout": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "/auth/logout Copy",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c9065d3bc577bb-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:21:49 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string",
+                  "example": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "7d37ca1a-a80e-45b4"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users/refresh": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "refresh",
+        "description": "refresh",
+        "operationId": "refresh",
+        "responses": {
+          "200": {
+            "description": "refresh",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8faee8a5424b0-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "114"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:14:01 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string",
+                  "example": "sessionId=j%3A%2267cab8d9686216dc35c58a79%22; Path=/; Expires=Sat, 08 Mar 2025 09:14:01 GMT; HttpOnly"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"7e-kIEXRccPcza2O8nlO5l6mPt8BD4\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "da319b8b-8d02-4430"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "accessToken": {
+                          "type": "string",
+                          "example": "5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully refreshed a session!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "refresh": {
+                    "value": {
+                      "data": {
+                        "accessToken": "5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC"
+                      },
+                      "message": "Successfully refreshed a session!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/request-reset-email": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "request-reset-email",
+        "description": "request-reset-email",
+        "operationId": "requestResetEmail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "dvankevich@5pro-software.net"
+                  }
+                }
+              },
+              "examples": {
+                "request-reset-email": {
+                  "value": {
+                    "email": "dvankevich@5pro-software.net"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "request-reset-email",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8fb65feeb24b0-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "70"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:14:20 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"50-g+cJaatAFPyGgTYM7mweEjJra50\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "17d9d68b-89aa-4704"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Reset password email was successfully sent!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "request-reset-email": {
+                    "value": {
+                      "data": {},
+                      "message": "Reset password email was successfully sent!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/reset-password": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "reset-password",
+        "description": "reset-password",
+        "operationId": "resetPassword",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "example": "password"
+                  },
+                  "token": {
+                    "type": "string",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw"
+                  }
+                }
+              },
+              "examples": {
+                "reset-password": {
+                  "value": {
+                    "password": "password",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "reset-password",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c905a19e9077bb-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "64"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:21:20 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"45-uSWy0Dxg3289U23ZYgR8c2fZRek\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "ea9302cb-272f-4a0a"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Password was successfully reset!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "reset-password": {
+                    "value": {
+                      "data": {},
+                      "message": "Password was successfully reset!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "reset-password",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c90503bc0377bb-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "69"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:20:54 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"4d-kVvI8HGTNfw5+nlKt+8syA2V4o4\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "5e82d1d5-9e60-4d75"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "jwt expired"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "reset-password": {
+                    "value": {
+                      "data": {
+                        "message": "jwt expired"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/userinfo": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "userinfo",
+        "description": "userinfo",
+        "operationId": "userinfo",
+        "responses": {
+          "200": {
+            "description": "userinfo",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f4ed0aab2d97-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "270"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:09:55 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"17c-YPIRXGdFUK8rUGAIPWyv8X0IbX4\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "c000241e-0d69-40fa"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67c99a0db345235733aa25ec"
+                        },
+                        "avatarUrl": {
+                          "type": "string",
+                          "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2025-03-06T12:50:21.426Z"
+                        },
+                        "dailyNorm": {
+                          "type": "number",
+                          "example": 2500
+                        },
+                        "dailySportTime": {
+                          "type": "number",
+                          "example": 2
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "dvankevich@5pro-software.net"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "example": "man"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Dmytro"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2025-03-06T12:51:42.608Z"
+                        },
+                        "weight": {
+                          "type": "number",
+                          "example": 0
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "User found completely!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "_id": "67c99a0db345235733aa25ec",
+                        "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png",
+                        "createdAt": "2025-03-06T12:50:21.426Z",
+                        "dailyNorm": 2500,
+                        "dailySportTime": 2,
+                        "email": "dvankevich@5pro-software.net",
+                        "gender": "man",
+                        "name": "Dmytro",
+                        "updatedAt": "2025-03-06T12:51:42.608Z",
+                        "weight": 0
+                      },
+                      "message": "User found completely!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "userinfo",
+        "description": "userinfo",
+        "operationId": "userinfo1",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dailyNorm": {
+                    "type": "string",
+                    "example": "2500"
+                  },
+                  "dailySportTime": {
+                    "type": "string",
+                    "example": "1.5"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "admin@dvankevich.pp.ua"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "example": "man"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Dmytro"
+                  },
+                  "photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "weight": {
+                    "type": "string",
+                    "example": "90"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "userinfo",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f67c0fa8ca2d-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "294"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:11:00 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"18c-e6wW6QMo3xKM4lwwhCMqhkOtRcU\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "fefd0a13-5ea4-4d15"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67c99a0db345235733aa25ec"
+                        },
+                        "avatarUrl": {
+                          "type": "string",
+                          "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2025-03-06T12:50:21.426Z"
+                        },
+                        "dailyNorm": {
+                          "type": "number",
+                          "example": 2500
+                        },
+                        "dailySportTime": {
+                          "type": "number",
+                          "example": 1.5
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "dvankevich@5pro-software.net"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "example": "man"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Dmytro"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2025-03-07T09:11:00.198Z"
+                        },
+                        "weight": {
+                          "type": "number",
+                          "example": 90
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully patched a user!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "_id": "67c99a0db345235733aa25ec",
+                        "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg",
+                        "createdAt": "2025-03-06T12:50:21.426Z",
+                        "dailyNorm": 2500,
+                        "dailySportTime": 1.5,
+                        "email": "dvankevich@5pro-software.net",
+                        "gender": "man",
+                        "name": "Dmytro",
+                        "updatedAt": "2025-03-07T09:11:00.198Z",
+                        "weight": 90
+                      },
+                      "message": "Successfully patched a user!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/water/day": {
+      "get": {
+        "tags": [
+          "water"
+        ],
+        "summary": "day",
+        "description": "day",
+        "operationId": "day",
+        "responses": {
+          "200": {
+            "description": "day",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f731fd1aca2d-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "387"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:11:28 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"493-OPzSZZsK3c//bjax1smdRDlhWKg\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "b71a5a45-f294-4d9b"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "_id": {
+                                "type": "string",
+                                "example": "67ca0ced9f3f17e442b9e8e5"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2025-03-06T21:00:29.889Z"
+                              },
+                              "date": {
+                                "type": "string",
+                                "example": "12/05/2026"
+                              },
+                              "time": {
+                                "type": "string",
+                                "example": "22:00"
+                              },
+                              "updated_at": {
+                                "type": "string",
+                                "example": "2025-03-06T21:00:40.561Z"
+                              },
+                              "userId": {
+                                "type": "string",
+                                "example": "67ca07be07aae24238f6e1c6"
+                              },
+                              "value": {
+                                "type": "number",
+                                "example": 500
+                              }
+                            }
+                          },
+                          "example": [
+                            {
+                              "_id": "67ca0ced9f3f17e442b9e8e5",
+                              "created_at": "2025-03-06T21:00:29.889Z",
+                              "date": "12/05/2026",
+                              "time": "22:00",
+                              "updated_at": "2025-03-06T21:00:40.561Z",
+                              "userId": "67ca07be07aae24238f6e1c6",
+                              "value": 500
+                            },
+                            {
+                              "_id": "67ca0e5a3006eaa0c3ffa47d",
+                              "created_at": "2025-03-06T21:06:34.714Z",
+                              "date": "12/05/2026",
+                              "time": "18:00",
+                              "updated_at": "2025-03-06T21:06:34.714Z",
+                              "userId": "67ca07be07aae24238f6e1c6",
+                              "value": 150
+                            },
+                            {
+                              "_id": "67ca0e703006eaa0c3ffa483",
+                              "created_at": "2025-03-06T21:06:56.457Z",
+                              "date": "12/05/2026",
+                              "time": "18:00",
+                              "updated_at": "2025-03-06T21:06:56.457Z",
+                              "userId": "67ca07be07aae24238f6e1c6",
+                              "value": 50
+                            },
+                            {
+                              "_id": "67cab6b43b867a8ed744b97b",
+                              "created_at": "2025-03-07T09:04:52.258Z",
+                              "date": "2025-03-07",
+                              "time": "11:04",
+                              "updated_at": "2025-03-07T09:04:52.258Z",
+                              "userId": "67c99a0db345235733aa25ec",
+                              "value": 200
+                            },
+                            {
+                              "_id": "67cab6ef3b867a8ed744b97f",
+                              "created_at": "2025-03-07T09:05:51.649Z",
+                              "date": "2025-03-07",
+                              "time": "11:05",
+                              "updated_at": "2025-03-07T09:05:51.649Z",
+                              "userId": "67c99a0db345235733aa25ec",
+                              "value": 150
+                            }
+                          ]
+                        },
+                        "hasNextPage": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "hasPreviousPage": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "page": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "perPage": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "totalItems": {
+                          "type": "number",
+                          "example": 5
+                        },
+                        "totalPages": {
+                          "type": "number",
+                          "example": 1
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully found amount water of the day"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "day": {
+                    "value": {
+                      "data": {
+                        "data": [
+                          {
+                            "_id": "67ca0ced9f3f17e442b9e8e5",
+                            "created_at": "2025-03-06T21:00:29.889Z",
+                            "date": "12/05/2026",
+                            "time": "22:00",
+                            "updated_at": "2025-03-06T21:00:40.561Z",
+                            "userId": "67ca07be07aae24238f6e1c6",
+                            "value": 500
+                          },
+                          {
+                            "_id": "67ca0e5a3006eaa0c3ffa47d",
+                            "created_at": "2025-03-06T21:06:34.714Z",
+                            "date": "12/05/2026",
+                            "time": "18:00",
+                            "updated_at": "2025-03-06T21:06:34.714Z",
+                            "userId": "67ca07be07aae24238f6e1c6",
+                            "value": 150
+                          },
+                          {
+                            "_id": "67ca0e703006eaa0c3ffa483",
+                            "created_at": "2025-03-06T21:06:56.457Z",
+                            "date": "12/05/2026",
+                            "time": "18:00",
+                            "updated_at": "2025-03-06T21:06:56.457Z",
+                            "userId": "67ca07be07aae24238f6e1c6",
+                            "value": 50
+                          },
+                          {
+                            "_id": "67cab6b43b867a8ed744b97b",
+                            "created_at": "2025-03-07T09:04:52.258Z",
+                            "date": "2025-03-07",
+                            "time": "11:04",
+                            "updated_at": "2025-03-07T09:04:52.258Z",
+                            "userId": "67c99a0db345235733aa25ec",
+                            "value": 200
+                          },
+                          {
+                            "_id": "67cab6ef3b867a8ed744b97f",
+                            "created_at": "2025-03-07T09:05:51.649Z",
+                            "date": "2025-03-07",
+                            "time": "11:05",
+                            "updated_at": "2025-03-07T09:05:51.649Z",
+                            "userId": "67c99a0db345235733aa25ec",
+                            "value": 150
+                          }
+                        ],
+                        "hasNextPage": false,
+                        "hasPreviousPage": false,
+                        "page": 1,
+                        "perPage": 10,
+                        "totalItems": 5,
+                        "totalPages": 1
+                      },
+                      "message": "Sucsesfully found amount water of the day",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/water": {
+      "post": {
+        "tags": [
+          "water"
+        ],
+        "summary": "water",
+        "description": "water",
+        "operationId": "water",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "example": "2025-03-07"
+                  },
+                  "time": {
+                    "type": "string",
+                    "example": "11:11"
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "150"
+                  }
+                }
+              },
+              "examples": {
+                "water": {
+                  "value": {
+                    "date": "2025-03-07",
+                    "time": "11:11",
+                    "value": "150"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "water",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "91c8f7be2bb6ca2d-KBP"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "173"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 09:11:50 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "etag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"104-tMjmf1QQYWyP3cZ9p0lvWsy0WzI\""
+                }
+              },
+              "rndr-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "7188c8a0-fda6-4fee"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "x-render-origin-server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Render"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67cab856686216dc35c58a6c"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2025-03-07T09:11:50.906Z"
+                        },
+                        "date": {
+                          "type": "string",
+                          "example": "2025-03-07"
+                        },
+                        "time": {
+                          "type": "string",
+                          "example": "11:11"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2025-03-07T09:11:50.906Z"
+                        },
+                        "userId": {
+                          "type": "string",
+                          "example": "67c99a0db345235733aa25ec"
+                        },
+                        "value": {
+                          "type": "number",
+                          "example": 150
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully add amount water"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 201
+                    }
+                  }
+                },
+                "examples": {
+                  "water": {
+                    "value": {
+                      "data": {
+                        "_id": "67cab856686216dc35c58a6c",
+                        "created_at": "2025-03-07T09:11:50.906Z",
+                        "date": "2025-03-07",
+                        "time": "11:11",
+                        "updated_at": "2025-03-07T09:11:50.906Z",
+                        "userId": "67c99a0db345235733aa25ec",
+                        "value": 150
+                      },
+                      "message": "Sucsesfully add amount water",
+                      "status": 201
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
