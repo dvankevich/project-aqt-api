@@ -40,7 +40,7 @@ export const startServer = () => {
   const corsOptions = {
     origin: [
       'http://localhost:5173',
-      'https://aqua-track-front-group-five.vercel.app/',
+      'https://aqua-track-front-group-five.vercel.app',
     ],
     credentials: true,
   };
