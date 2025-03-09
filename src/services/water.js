@@ -52,5 +52,16 @@ export const getAmountWater = async ({ userId, page, perPage }) => {
   return { data: cards, ...paginData };
 };
 
-export const getAmountWaterDay = () => {};
+export const getAmountWaterDay = async ({ date, userId }) => {
+  const onlyDate = new Date(date).toISOString().slice(0, 10);
+
+  const databyUser = await waterCollection.find({ userId: userId });
+
+  const filteredData = databyUser.filter((item) => {
+    const itemDate = new Date(item.date).toISOString().slice(0, 10);
+    return itemDate === onlyDate;
+  });
+
+  return filteredData;
+};
 export const getAmountWaterMonth = () => {};
