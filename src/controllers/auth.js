@@ -9,16 +9,11 @@ import {
   resetPassword,
 } from '../services/auth.js';
 import { loginUser } from '../services/auth.js';
-<<<<<<< HEAD
-import { generateAuthUrl } from '../utils/googleOAuth2.js';
-import { loginOrSignupWithGoogle } from '../services/auth.js';
-=======
 import { ONE_DAY } from '../constants/index.js';
 import createHttpError from 'http-errors';
 import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
 import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
 import { getEnvVar } from '../utils/getEnvVar.js';
->>>>>>> main
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -32,15 +27,7 @@ export const registerUserController = async (req, res) => {
 
 export const loginUserController = async (req, res) => {
   const session = await loginUser(req.body);
-
-  res.cookie('refreshToken', session.refreshToken, {
-    httpOnly: true,
-    expires: new Date(Date.now() + ONE_DAY),
-  });
-  res.cookie('sessionId', session._id, {
-    httpOnly: true,
-    expires: new Date(Date.now() + ONE_DAY),
-  });
+  setupSession(res, session);
 
   res.json({
     status: 200,
@@ -68,21 +55,6 @@ export const getRegisteredUserController = async (req, res) => {
   });
 };
 
-<<<<<<< HEAD
-export const getGoogleOAuthUrlController = async (req, res) => {
-  const url = generateAuthUrl();
-  res.json({
-    status: 200,
-    message: 'Successfully get Google OAuth url!',
-    data: {
-      url,
-    },
-  });
-};
-
-export const loginWithGoogleController = async (req, res) => {
-  const session = await loginOrSignupWithGoogle(req.body.code);
-=======
 export const resetPasswordController = async (req, res) => {
   await resetPassword(req.body);
   res.json({
@@ -104,13 +76,25 @@ export const logoutUserController = async (req, res) => {
 };
 
 const setupSession = (res, session) => {
+  // res.cookie('refreshToken', session.refreshToken, {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + ONE_DAY),
+  // });
+  // res.cookie('sessionId', session._id, {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + ONE_DAY),
+  // });
   res.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
+    sameSite: 'None', // Залиште цей параметр для підтримки крос-доменних запитів
+    secure: true, // Приберіть або закоментуйте цей параметр для HTTP
   });
   res.cookie('sessionId', session._id, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
+    sameSite: 'None', // Залиште цей параметр для підтримки крос-доменних запитів
+    secure: true, // Приберіть або закоментуйте цей параметр для HTTP
   });
 };
 
@@ -120,23 +104,16 @@ export const refreshUserSessionController = async (req, res) => {
     refreshToken: req.cookies.refreshToken,
   });
 
->>>>>>> main
   setupSession(res, session);
 
   res.json({
     status: 200,
-<<<<<<< HEAD
-    message: 'Successfully logged in via Google OAuth!',
-=======
     message: 'Successfully refreshed a session!',
->>>>>>> main
     data: {
       accessToken: session.accessToken,
     },
   });
 };
-<<<<<<< HEAD
-=======
 
 export const infoUserController = async (req, res, next) => {
   const {
@@ -187,4 +164,3 @@ export const patchUserController = async (req, res, next) => {
     data: result.user,
   });
 };
->>>>>>> main
