@@ -6,7 +6,6 @@ import {
   getAmountWaterMonth,
   updateAmountWater,
 } from '../services/water.js';
-// import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 
 export const addAmountWaterController = async (req, res) => {
   const userId = req.user._id;
@@ -45,7 +44,6 @@ export const deleteAmountWaterController = async (req, res) => {
 };
 
 export const getAmountWaterDayController = async (req, res) => {
-  // const { page, perPage } = parsePaginationParams(req.query);
   const { date } = req.query;
   const userId = req.user._id;
 
@@ -58,10 +56,10 @@ export const getAmountWaterDayController = async (req, res) => {
 };
 
 export const getAmountWaterMonthController = async (req, res) => {
-  const { date } = req.query;
+  const { month } = req.query;
   const userId = req.user._id;
 
-  const data = await getAmountWaterMonth({ userId, date });
+  const data = await getAmountWaterMonth({ userId, month });
   res.json({
     status: 200,
     message: 'Sucsesfully found amount water of the month',

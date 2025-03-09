@@ -1,6 +1,6 @@
 import { waterCollection } from '../db/models/water.js';
 import { notFoundCardHandler } from '../middlewares/notFoundCardHandler.js';
-import { paginationData } from '../utils/calculatePaginationData.js';
+
 
 export const addAmountWater = async (data, userId) => {
   const card = await waterCollection.create({ ...data, userId });
@@ -28,29 +28,12 @@ export const updateAmountWater = async (data, cardId, userId, options = {}) => {
     isNew,
   };
 };
+
 export const deleteAmountWater = async (cardId, userId) => {
   const card = await waterCollection.findOneAndDelete({ _id: cardId, userId });
   return card;
 };
-export const getAmountWater = async ({ userId, page, perPage }) => {
-  const limit = perPage;
-  const skip = (page - 1) * perPage;
 
-  const cardsByUser = waterCollection.find({ userId: userId });
-  const cardsQuery = waterCollection.find();
-
-  const cardsCount = await waterCollection
-    .find()
-    .merge(cardsByUser)
-    .merge(cardsQuery)
-    .countDocuments();
-
-  const cards = await cardsQuery.merge(cardsByUser).limit(limit).skip(skip);
-
-  const paginData = paginationData(page, perPage, cardsCount);
-
-  return { data: cards, ...paginData };
-};
 
 export const getAmountWaterDay = async ({ date, userId }) => {
   const onlyDate = new Date(date).toISOString().slice(0, 10);
@@ -64,4 +47,33 @@ export const getAmountWaterDay = async ({ date, userId }) => {
 
   return filteredData;
 };
-export const getAmountWaterMonth = () => {};
+
+export const getAmountWaterMonth = async ({ month, userId }) => {
+  const onlyMonth = new Date(month).toISOString().slice(0, 7);
+
+  const databyUser = await waterCollection.find({ userId: userId });
+
+  const filteredData = [];
+
+  databyUser.forEach((item) => {
+    const itemDate = new Date(item.date).toISOString().slice(0, 7);
+
+    if (itemDate === onlyMonth) {
+      filteredData.push(item);
+    }
+  });
+
+  const dailyWaterAmount = {};
+
+  filteredData.forEach((item) => {
+    const day = new Date(item.date).toISOString().slice(0, 10);
+
+    if (dailyWaterAmount[day]) {
+      dailyWaterAmount[day] += item.value;
+    } else {
+      dailyWaterAmount[day] = item.value;
+    }
+  });
+
+  return dailyWaterAmount;
+};
