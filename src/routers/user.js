@@ -43,11 +43,6 @@ router.post(
   ctrlWrapper(requestResetEmailController),
 );
 
-router.get(
-  '/public/registered-users',
-  ctrlWrapper(getRegisteredUserController),
-);
-
 router.post(
   '/reset-password',
   validateBody(resetPasswordSchema),
@@ -57,6 +52,8 @@ router.post(
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
 router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
+
+router.get('/registered-users', ctrlWrapper(getRegisteredUserController));
 
 router.patch(
   '/userinfo',
