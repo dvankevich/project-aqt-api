@@ -12,16 +12,13 @@ import handlebars from 'handlebars';
 import path from 'node:path';
 import fs from 'node:fs/promises';
 
-<<<<<<< HEAD
 import {
   getFullNameFromGoogleTokenPayload,
   validateCode,
 } from '../utils/googleOAuth2.js';
-=======
 import { FIFTEEN_MINUTES, ONE_DAY } from '../constants/index.js';
 import { SessionsCollection } from '../db/models/session.js';
 import { randomBytes } from 'crypto';
->>>>>>> main
 
 export const registerUser = async (payload) => {
   const user = await UsersCollection.findOne({ email: payload.email });
@@ -100,7 +97,6 @@ export const requestResetToken = async (email) => {
   });
 };
 
-<<<<<<< HEAD
 export const loginOrSignupWithGoogle = async (code) => {
   const loginTicket = await validateCode(code);
   const payload = loginTicket.getPayload();
@@ -115,7 +111,16 @@ export const loginOrSignupWithGoogle = async (code) => {
       password,
       role: 'parent',
     });
-=======
+  }
+
+  const newSession = createSession();
+
+  return await SessionsCollection.create({
+    userId: user._id,
+    ...newSession,
+  });
+};
+
 export const resetPassword = async (payload) => {
   let entries;
 
@@ -174,18 +179,10 @@ export const refreshUsersSession = async ({ sessionId, refreshToken }) => {
 
   if (isSessionTokenExpired) {
     throw createHttpError(401, 'Session token expired');
->>>>>>> main
   }
 
   const newSession = createSession();
 
-<<<<<<< HEAD
-  return await SessionsCollection.create({
-    userId: user._id,
-    ...newSession,
-  });
-};
-=======
   await SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
 
   return await SessionsCollection.create({
@@ -219,4 +216,3 @@ export const patchUser = async (userId, payload, options = {}) => {
     isNew: Boolean(rawResult?.lastErrorObject?.upserted),
   };
 };
->>>>>>> main
