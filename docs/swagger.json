@@ -313,7 +313,7 @@
                 "properties": {
                   "email": {
                     "type": "string",
-                    "example": "dvankevich@5pro-software.ne"
+                    "example": "nonregistered@mail.com"
                   },
                   "password": {
                     "type": "string",
@@ -324,7 +324,7 @@
               "examples": {
                 "login": {
                   "value": {
-                    "email": "dvankevich@5pro-software.ne",
+                    "email": "nonregistered@mail.com",
                     "password": "Pa$$w0rd"
                   }
                 }
@@ -345,7 +345,7 @@
                       "properties": {
                         "accessToken": {
                           "type": "string",
-                          "example": "6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW"
+                          "example": "accessTokenValue"
                         }
                       }
                     },
@@ -363,7 +363,7 @@
                   "login": {
                     "value": {
                       "data": {
-                        "accessToken": "6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW"
+                        "accessToken": "accessTokenValue"
                       },
                       "message": "Successfully logged in an user!",
                       "status": 200
@@ -477,7 +477,7 @@
         },
         "responses": {
           "204": {
-            "description": "/auth/logout Copy",
+            "description": "logout",
             "content": {}
           }
         }
@@ -504,7 +504,7 @@
                       "properties": {
                         "accessToken": {
                           "type": "string",
-                          "example": "5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC"
+                          "example": "accessTokenValue"
                         }
                       }
                     },
@@ -522,10 +522,50 @@
                   "refresh": {
                     "value": {
                       "data": {
-                        "accessToken": "5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC"
+                        "accessToken": "accessTokenValue"
                       },
                       "message": "Successfully refreshed a session!",
                       "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "refresh",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Session not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "refresh": {
+                    "value": {
+                      "data": {
+                        "message": "Session not found"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
                     }
                   }
                 }
@@ -551,14 +591,14 @@
                 "properties": {
                   "email": {
                     "type": "string",
-                    "example": "dvankevich@5pro-software.net"
+                    "example": "wuser02@dvankevich.pp.ua"
                   }
                 }
               },
               "examples": {
                 "request-reset-email": {
                   "value": {
-                    "email": "dvankevich@5pro-software.net"
+                    "email": "wuser02@dvankevich.pp.ua"
                   }
                 }
               }
@@ -622,7 +662,7 @@
                   },
                   "token": {
                     "type": "string",
-                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw"
+                    "example": "reset password token"
                   }
                 }
               },
@@ -630,7 +670,7 @@
                 "reset-password": {
                   "value": {
                     "password": "password",
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw"
+                    "token": "reset password token"
                   }
                 }
               }
@@ -735,7 +775,7 @@
                       "properties": {
                         "_id": {
                           "type": "string",
-                          "example": "67c99a0db345235733aa25ec"
+                          "example": "67cabb8b686216dc35c58a85"
                         },
                         "avatarUrl": {
                           "type": "string",
@@ -743,31 +783,27 @@
                         },
                         "createdAt": {
                           "type": "string",
-                          "example": "2025-03-06T12:50:21.426Z"
+                          "example": "2025-03-07T09:25:31.211Z"
                         },
                         "dailyNorm": {
                           "type": "number",
-                          "example": 2500
+                          "example": 1500
                         },
                         "dailySportTime": {
                           "type": "number",
-                          "example": 2
+                          "example": 0
                         },
                         "email": {
                           "type": "string",
-                          "example": "dvankevich@5pro-software.net"
+                          "example": "wuser02@dvankevich.pp.ua"
                         },
                         "gender": {
                           "type": "string",
-                          "example": "man"
-                        },
-                        "name": {
-                          "type": "string",
-                          "example": "Dmytro"
+                          "example": "woman"
                         },
                         "updatedAt": {
                           "type": "string",
-                          "example": "2025-03-06T12:51:42.608Z"
+                          "example": "2025-03-11T12:33:44.210Z"
                         },
                         "weight": {
                           "type": "number",
@@ -789,15 +825,14 @@
                   "userinfo": {
                     "value": {
                       "data": {
-                        "_id": "67c99a0db345235733aa25ec",
+                        "_id": "67cabb8b686216dc35c58a85",
                         "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png",
-                        "createdAt": "2025-03-06T12:50:21.426Z",
-                        "dailyNorm": 2500,
-                        "dailySportTime": 2,
-                        "email": "dvankevich@5pro-software.net",
-                        "gender": "man",
-                        "name": "Dmytro",
-                        "updatedAt": "2025-03-06T12:51:42.608Z",
+                        "createdAt": "2025-03-07T09:25:31.211Z",
+                        "dailyNorm": 1500,
+                        "dailySportTime": 0,
+                        "email": "wuser02@dvankevich.pp.ua",
+                        "gender": "woman",
+                        "updatedAt": "2025-03-11T12:33:44.210Z",
                         "weight": 0
                       },
                       "message": "User found completely!",
@@ -889,7 +924,7 @@
                         },
                         "email": {
                           "type": "string",
-                          "example": "dvankevich@5pro-software.net"
+                          "example": "wuser02@dvankevich.pp.ua"
                         },
                         "gender": {
                           "type": "string",
@@ -928,7 +963,7 @@
                         "createdAt": "2025-03-06T12:50:21.426Z",
                         "dailyNorm": 2500,
                         "dailySportTime": 1.5,
-                        "email": "dvankevich@5pro-software.net",
+                        "email": "wuser02@dvankevich.pp.ua",
                         "gender": "man",
                         "name": "Dmytro",
                         "updatedAt": "2025-03-07T09:11:00.198Z",
@@ -1001,7 +1036,7 @@
                 "properties": {
                   "date": {
                     "type": "string",
-                    "example": "2025-03-09T32:78"
+                    "example": "2025-03-11T12:15"
                   },
                   "value": {
                     "type": "number",
@@ -1012,7 +1047,7 @@
               "examples": {
                 "addWater": {
                   "value": {
-                    "date": "2025-03-09T32:78",
+                    "date": "2025-03-11T12:15",
                     "value": 250
                   }
                 }
@@ -1022,7 +1057,109 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": "addWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67d03e958f39947802e7ba34"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2025-03-11T13:45:57.761Z"
+                        },
+                        "date": {
+                          "type": "string",
+                          "example": "2025-03-11T12:15"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2025-03-11T13:45:57.761Z"
+                        },
+                        "userId": {
+                          "type": "string",
+                          "example": "67cabb8b686216dc35c58a85"
+                        },
+                        "value": {
+                          "type": "number",
+                          "example": 250
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully add amount water"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 201
+                    }
+                  }
+                },
+                "examples": {
+                  "addWater": {
+                    "value": {
+                      "data": {
+                        "_id": "67d03e958f39947802e7ba34",
+                        "created_at": "2025-03-11T13:45:57.761Z",
+                        "date": "2025-03-11T12:15",
+                        "updated_at": "2025-03-11T13:45:57.761Z",
+                        "userId": "67cabb8b686216dc35c58a85",
+                        "value": 250
+                      },
+                      "message": "Sucsesfully add amount water",
+                      "status": 201
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "addWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Access token expired"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "addWater": {
+                    "value": {
+                      "data": {
+                        "message": "Access token expired"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -1036,8 +1173,89 @@
         "description": "Delete info about water",
         "operationId": "deletewater",
         "responses": {
-          "200": {
-            "description": ""
+          "204": {
+            "description": "deleteWater",
+            "content": {}
+          },
+          "400": {
+            "description": "deleteWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Bad Request.Invalid parameter."
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "BadRequestError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  }
+                },
+                "examples": {
+                  "deleteWater": {
+                    "value": {
+                      "data": {
+                        "message": "Bad Request.Invalid parameter."
+                      },
+                      "message": "BadRequestError",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "deleteWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Card not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "NotFoundError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 404
+                    }
+                  }
+                },
+                "examples": {
+                  "deleteWater": {
+                    "value": {
+                      "data": {
+                        "message": "Card not found"
+                      },
+                      "message": "NotFoundError",
+                      "status": 404
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -1077,7 +1295,149 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": "updateWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67d03e958f39947802e7ba34"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2025-03-11T13:45:57.761Z"
+                        },
+                        "date": {
+                          "type": "string",
+                          "example": "2025-03-08T10:20"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2025-03-11T13:47:41.200Z"
+                        },
+                        "userId": {
+                          "type": "string",
+                          "example": "67cabb8b686216dc35c58a85"
+                        },
+                        "value": {
+                          "type": "number",
+                          "example": 500
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully updated amount water"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "updateWater": {
+                    "value": {
+                      "data": {
+                        "_id": "67d03e958f39947802e7ba34",
+                        "created_at": "2025-03-11T13:45:57.761Z",
+                        "date": "2025-03-08T10:20",
+                        "updated_at": "2025-03-11T13:47:41.200Z",
+                        "userId": "67cabb8b686216dc35c58a85",
+                        "value": 500
+                      },
+                      "message": "Sucsesfully updated amount water",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "updateWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Bad Request.Invalid parameter."
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "BadRequestError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  }
+                },
+                "examples": {
+                  "updateWater": {
+                    "value": {
+                      "data": {
+                        "message": "Bad Request.Invalid parameter."
+                      },
+                      "message": "BadRequestError",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "updateWater",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Card not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "NotFoundError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 404
+                    }
+                  }
+                },
+                "examples": {
+                  "updateWater": {
+                    "value": {
+                      "data": {
+                        "message": "Card not found"
+                      },
+                      "message": "NotFoundError",
+                      "status": 404
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -1113,7 +1473,140 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "getWaterDay",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string",
+                            "example": "67d02dedbcb5126983f2ad47"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2025-03-11T12:34:53.667Z"
+                          },
+                          "date": {
+                            "type": "string",
+                            "example": "2025-03-11T11:00"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2025-03-11T12:34:53.667Z"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "example": "67cabb8b686216dc35c58a85"
+                          },
+                          "value": {
+                            "type": "number",
+                            "example": 250
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "_id": "67d02dedbcb5126983f2ad47",
+                          "created_at": "2025-03-11T12:34:53.667Z",
+                          "date": "2025-03-11T11:00",
+                          "updated_at": "2025-03-11T12:34:53.667Z",
+                          "userId": "67cabb8b686216dc35c58a85",
+                          "value": 250
+                        },
+                        {
+                          "_id": "67d02dfbbcb5126983f2ad4b",
+                          "created_at": "2025-03-11T12:35:07.241Z",
+                          "date": "2025-03-11T12:15",
+                          "updated_at": "2025-03-11T12:35:07.241Z",
+                          "userId": "67cabb8b686216dc35c58a85",
+                          "value": 250
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully found amount water of the day"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterDay": {
+                    "value": {
+                      "data": [
+                        {
+                          "_id": "67d02dedbcb5126983f2ad47",
+                          "created_at": "2025-03-11T12:34:53.667Z",
+                          "date": "2025-03-11T11:00",
+                          "updated_at": "2025-03-11T12:34:53.667Z",
+                          "userId": "67cabb8b686216dc35c58a85",
+                          "value": 250
+                        },
+                        {
+                          "_id": "67d02dfbbcb5126983f2ad4b",
+                          "created_at": "2025-03-11T12:35:07.241Z",
+                          "date": "2025-03-11T12:15",
+                          "updated_at": "2025-03-11T12:35:07.241Z",
+                          "userId": "67cabb8b686216dc35c58a85",
+                          "value": 250
+                        }
+                      ],
+                      "message": "Sucsesfully found amount water of the day",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "getWaterDay",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Please provide Authorization header"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterDay": {
+                    "value": {
+                      "data": {
+                        "message": "Please provide Authorization header"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -1138,7 +1631,84 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "getWaterMonth",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "2025-03-11": {
+                          "type": "number",
+                          "example": 500
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Sucsesfully found amount water of the month"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterMonth": {
+                    "value": {
+                      "data": {
+                        "2025-03-11": 500
+                      },
+                      "message": "Sucsesfully found amount water of the month",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "getWaterMonth",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Please provide Authorization header"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterMonth": {
+                    "value": {
+                      "data": {
+                        "message": "Please provide Authorization header"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
