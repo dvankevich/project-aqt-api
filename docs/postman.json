@@ -12,6 +12,9 @@
         {
           "name": "register",
           "request": {
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -143,6 +146,9 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -405,156 +411,6 @@
           ]
         },
         {
-          "name": "request-reset-email",
-          "request": {
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{base_url}}/users/request-reset-email",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "users",
-                "request-reset-email"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "request-reset-email",
-              "originalRequest": {
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/request-reset-email",
-                  "protocol": "https",
-                  "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
-                  ],
-                  "path": [
-                    "users",
-                    "request-reset-email"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "cookie": [],
-              "body": "{\n    \"message\": \"Reset password email was successfully sent!\",\n    \"status\": 200,\n    \"data\": {}\n}"
-            }
-          ]
-        },
-        {
-          "name": "reset-password",
-          "request": {
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{base_url}}/users/reset-password",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "users",
-                "reset-password"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "reset-password",
-              "originalRequest": {
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/reset-password",
-                  "protocol": "https",
-                  "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
-                  ],
-                  "path": [
-                    "users",
-                    "reset-password"
-                  ]
-                }
-              },
-              "status": "Unauthorized",
-              "code": 401,
-              "_postman_previewlanguage": "json",
-              "cookie": [],
-              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"jwt expired\"\n    }\n}"
-            },
-            {
-              "name": "reset-password",
-              "originalRequest": {
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{base_url}}/users/reset-password",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "users",
-                    "reset-password"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "cookie": [],
-              "body": "{\n    \"message\": \"Password was successfully reset!\",\n    \"status\": 200,\n    \"data\": {}\n}"
-            }
-          ]
-        },
-        {
           "name": "userinfo",
           "request": {
             "method": "GET",
@@ -603,11 +459,11 @@
                 {
                   "key": "photo",
                   "type": "file",
-                  "src": "/home/dima/Pictures/MyPhoto/Avatar/dvankevich.jpeg"
+                  "src": "/home/dima/Pictures/Avatars/3d-illustration-person-with-sunglasses/7309681.jpg"
                 },
                 {
                   "key": "name",
-                  "value": "Dmytro",
+                  "value": "Wuser01",
                   "type": "text"
                 },
                 {
@@ -617,12 +473,12 @@
                 },
                 {
                   "key": "weight",
-                  "value": "90",
+                  "value": "75",
                   "type": "text"
                 },
                 {
                   "key": "dailySportTime",
-                  "value": "1.5",
+                  "value": "2",
                   "type": "text"
                 },
                 {
@@ -723,33 +579,57 @@
           ]
         },
         {
-          "name": "registered-users",
+          "name": "request-reset-email",
           "request": {
-            "method": "GET",
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": "{{base_url}}/users/registered-users",
+              "raw": "{{base_url}}/users/request-reset-email",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "users",
-                "registered-users"
+                "request-reset-email"
               ]
             }
           },
           "response": [
             {
-              "name": "registered-users",
+              "name": "request-reset-email",
               "originalRequest": {
-                "method": "GET",
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": {
-                  "raw": "{{base_url}}/users/registered-users",
+                  "raw": "https://project-aqt-api.onrender.com/users/request-reset-email",
+                  "protocol": "https",
                   "host": [
-                    "{{base_url}}"
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
                   ],
                   "path": [
                     "users",
-                    "registered-users"
+                    "request-reset-email"
                   ]
                 }
               },
@@ -757,7 +637,142 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "cookie": [],
-              "body": "{\n    \"message\": \"Total count of registered users are 24 \",\n    \"status\": 200\n}"
+              "body": "{\n    \"message\": \"Reset password email was successfully sent!\",\n    \"status\": 200,\n    \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/reset-password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "reset-password"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "reset-password",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/reset-password",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"jwt expired\"\n    }\n}"
+            },
+            {
+              "name": "reset-password",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/reset-password",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"message\": \"Password was successfully reset!\",\n    \"status\": 200,\n    \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/users/count",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "count"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "count",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/users/count",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "count"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"message\": \"Total count of registered users are 29 \",\n    \"status\": 200\n}"
             }
           ]
         }
@@ -1277,6 +1292,9 @@
         {
           "name": "get-oauth-url",
           "request": {
+            "auth": {
+              "type": "noauth"
+            },
             "method": "GET",
             "url": {
               "raw": "{{base_url}}/auth/get-oauth-url",
@@ -1316,6 +1334,9 @@
         {
           "name": "confirm-oauth",
           "request": {
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
             "body": {
               "mode": "raw",

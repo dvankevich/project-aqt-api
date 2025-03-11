@@ -294,7 +294,10 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {}
+        ]
       }
     },
     "/users/login": {
@@ -453,7 +456,10 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {}
+        ]
       }
     },
     "/users/logout": {
@@ -563,185 +569,6 @@
                     "value": {
                       "data": {
                         "message": "Session not found"
-                      },
-                      "message": "UnauthorizedError",
-                      "status": 401
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/users/request-reset-email": {
-      "post": {
-        "tags": [
-          "users"
-        ],
-        "summary": "request-reset-email",
-        "description": "request-reset-email",
-        "operationId": "requestResetEmail",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "email": {
-                    "type": "string",
-                    "example": "wuser02@dvankevich.pp.ua"
-                  }
-                }
-              },
-              "examples": {
-                "request-reset-email": {
-                  "value": {
-                    "email": "wuser02@dvankevich.pp.ua"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "request-reset-email",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Reset password email was successfully sent!"
-                    },
-                    "status": {
-                      "type": "number",
-                      "example": 200
-                    }
-                  }
-                },
-                "examples": {
-                  "request-reset-email": {
-                    "value": {
-                      "data": {},
-                      "message": "Reset password email was successfully sent!",
-                      "status": 200
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/users/reset-password": {
-      "post": {
-        "tags": [
-          "users"
-        ],
-        "summary": "reset-password",
-        "description": "reset-password",
-        "operationId": "resetPassword",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "password": {
-                    "type": "string",
-                    "example": "password"
-                  },
-                  "token": {
-                    "type": "string",
-                    "example": "reset password token"
-                  }
-                }
-              },
-              "examples": {
-                "reset-password": {
-                  "value": {
-                    "password": "password",
-                    "token": "reset password token"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "reset-password",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Password was successfully reset!"
-                    },
-                    "status": {
-                      "type": "number",
-                      "example": 200
-                    }
-                  }
-                },
-                "examples": {
-                  "reset-password": {
-                    "value": {
-                      "data": {},
-                      "message": "Password was successfully reset!",
-                      "status": 200
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "reset-password",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "message": {
-                          "type": "string",
-                          "example": "jwt expired"
-                        }
-                      }
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "UnauthorizedError"
-                    },
-                    "status": {
-                      "type": "number",
-                      "example": 401
-                    }
-                  }
-                },
-                "examples": {
-                  "reset-password": {
-                    "value": {
-                      "data": {
-                        "message": "jwt expired"
                       },
                       "message": "UnauthorizedError",
                       "status": 401
@@ -980,25 +807,51 @@
         }
       }
     },
-    "/users/registered-users": {
-      "get": {
+    "/users/request-reset-email": {
+      "post": {
         "tags": [
           "users"
         ],
-        "summary": "registered-users",
-        "description": "registered-users",
-        "operationId": "registeredUsers",
+        "summary": "request-reset-email",
+        "description": "request-reset-email",
+        "operationId": "requestResetEmail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "wuser02@dvankevich.pp.ua"
+                  }
+                }
+              },
+              "examples": {
+                "request-reset-email": {
+                  "value": {
+                    "email": "wuser02@dvankevich.pp.ua"
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "registered-users",
+            "description": "request-reset-email",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
                     "message": {
                       "type": "string",
-                      "example": "Total count of registered users are 24 "
+                      "example": "Reset password email was successfully sent!"
                     },
                     "status": {
                       "type": "number",
@@ -1007,9 +860,10 @@
                   }
                 },
                 "examples": {
-                  "registered-users": {
+                  "request-reset-email": {
                     "value": {
-                      "message": "Total count of registered users are 24 ",
+                      "data": {},
+                      "message": "Reset password email was successfully sent!",
                       "status": 200
                     }
                   }
@@ -1017,7 +871,168 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/users/reset-password": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "reset-password",
+        "description": "reset-password",
+        "operationId": "resetPassword",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "example": "password"
+                  },
+                  "token": {
+                    "type": "string",
+                    "example": "reset password token"
+                  }
+                }
+              },
+              "examples": {
+                "reset-password": {
+                  "value": {
+                    "password": "password",
+                    "token": "reset password token"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "reset-password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Password was successfully reset!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "reset-password": {
+                    "value": {
+                      "data": {},
+                      "message": "Password was successfully reset!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "reset-password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "jwt expired"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "reset-password": {
+                    "value": {
+                      "data": {
+                        "message": "jwt expired"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/users/count": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "count",
+        "description": "count",
+        "operationId": "count",
+        "responses": {
+          "200": {
+            "description": "count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Total count of registered users are 29 "
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "count": {
+                    "value": {
+                      "message": "Total count of registered users are 29 ",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
       }
     },
     "/water": {
@@ -1762,7 +1777,10 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {}
+        ]
       }
     },
     "/auth/confirm-oauth": {
@@ -1910,7 +1928,10 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {}
+        ]
       }
     }
   },
