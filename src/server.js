@@ -40,7 +40,7 @@ export const startServer = () => {
   const corsOptions = {
     origin: [
       'http://localhost:3000', // local swagger 
-      'https://project-aqt-api-testing.onrender.com' // swagger
+      'https://project-aqt-api-testing.onrender.com', // swagger
       'http://localhost:5173', // local frontend
       'https://aqua-track-front-group-five.vercel.app',
     ],
