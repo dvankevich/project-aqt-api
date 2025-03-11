@@ -50,9 +50,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/register",
+									"raw": "https://project-aqt-api.onrender.com/users/register",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -337,7 +340,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+							"raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\",\n    \"password\": \"Pa$$w0rd\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -371,9 +374,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/login",
+									"raw": "https://project-aqt-api.onrender.com/users/login",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -698,9 +704,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/logout",
+									"raw": "https://project-aqt-api.onrender.com/users/logout",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -802,9 +811,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/users/refresh",
+									"raw": "https://project-aqt-api.onrender.com/users/refresh",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -897,7 +909,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\"\n}",
+							"raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -931,9 +943,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/request-reset-email",
+									"raw": "https://project-aqt-api.onrender.com/users/request-reset-email",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1052,9 +1067,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/reset-password",
+									"raw": "https://project-aqt-api.onrender.com/users/reset-password",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1248,9 +1266,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/users/userinfo",
+									"raw": "https://project-aqt-api.onrender.com/users/userinfo",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1438,9 +1459,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/userinfo",
+									"raw": "https://project-aqt-api.onrender.com/users/userinfo",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1517,42 +1541,40 @@
 							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"dvankevich@5pro-software.net\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "water",
-			"item": [
+				},
 				{
-					"name": "day",
+					"name": "registered-users",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/water/day",
+							"raw": "{{base_url}}/users/registered-users",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"water",
-								"day"
+								"users",
+								"registered-users"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "day",
+							"name": "registered-users",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/water/day",
+									"raw": "https://project-aqt-api.onrender.com/users/registered-users",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
-										"water",
-										"day"
+										"users",
+										"registered-users"
 									]
 								}
 							},
@@ -1562,7 +1584,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:11:28 GMT"
+									"value": "Tue, 11 Mar 2025 07:40:37 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -1570,15 +1592,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "387"
+									"value": "60"
 								},
 								{
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
-									"key": "access-control-allow-origin",
-									"value": "*"
+									"key": "access-control-allow-credentials",
+									"value": "true"
 								},
 								{
 									"key": "Content-Encoding",
@@ -1586,11 +1608,15 @@
 								},
 								{
 									"key": "etag",
-									"value": "W/\"493-OPzSZZsK3c//bjax1smdRDlhWKg\""
+									"value": "W/\"42-P8t9vDM4sS7Hrg1zWFK9qB5oiFY\""
 								},
 								{
 									"key": "rndr-id",
-									"value": "b71a5a45-f294-4d9b"
+									"value": "48d93af7-015c-47f1"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
 								},
 								{
 									"key": "vary",
@@ -1614,7 +1640,7 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "91c8f731fd1aca2d-KBP"
+									"value": "91e967a05d42ca3d-KBP"
 								},
 								{
 									"key": "alt-svc",
@@ -1622,18 +1648,35 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the day\",\n    \"data\": {\n        \"data\": [\n            {\n                \"_id\": \"67ca0ced9f3f17e442b9e8e5\",\n                \"value\": 500,\n                \"date\": \"12/05/2026\",\n                \"time\": \"22:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:00:29.889Z\",\n                \"updated_at\": \"2025-03-06T21:00:40.561Z\"\n            },\n            {\n                \"_id\": \"67ca0e5a3006eaa0c3ffa47d\",\n                \"value\": 150,\n                \"date\": \"12/05/2026\",\n                \"time\": \"18:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:06:34.714Z\",\n                \"updated_at\": \"2025-03-06T21:06:34.714Z\"\n            },\n            {\n                \"_id\": \"67ca0e703006eaa0c3ffa483\",\n                \"value\": 50,\n                \"date\": \"12/05/2026\",\n                \"time\": \"18:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:06:56.457Z\",\n                \"updated_at\": \"2025-03-06T21:06:56.457Z\"\n            },\n            {\n                \"_id\": \"67cab6b43b867a8ed744b97b\",\n                \"value\": 200,\n                \"date\": \"2025-03-07\",\n                \"time\": \"11:04\",\n                \"userId\": \"67c99a0db345235733aa25ec\",\n                \"created_at\": \"2025-03-07T09:04:52.258Z\",\n                \"updated_at\": \"2025-03-07T09:04:52.258Z\"\n            },\n            {\n                \"_id\": \"67cab6ef3b867a8ed744b97f\",\n                \"value\": 150,\n                \"date\": \"2025-03-07\",\n                \"time\": \"11:05\",\n                \"userId\": \"67c99a0db345235733aa25ec\",\n                \"created_at\": \"2025-03-07T09:05:51.649Z\",\n                \"updated_at\": \"2025-03-07T09:05:51.649Z\"\n            }\n        ],\n        \"page\": 1,\n        \"perPage\": 10,\n        \"totalItems\": 5,\n        \"totalPages\": 1,\n        \"hasNextPage\": false,\n        \"hasPreviousPage\": false\n    }\n}"
+							"body": "{\n    \"message\": \"Total count of registered users are 24 \",\n    \"status\": 200\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "water",
+			"item": [
 				{
-					"name": "water",
+					"name": "addWater",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"value\": \"150\",\n    \"date\": \"2025-03-07\",\n    \"time\": \"11:05\"\n}",
+							"raw": "{\r\n  \"value\":250,\r\n  \"date\":\"2025-03-09T32:78\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1648,30 +1691,158 @@
 							"path": [
 								"water"
 							]
+						},
+						"description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time. Upon successful execution, the response will be in JSON format with a status code of 200.\n\n### Response\n\nThe response will be in the form of a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"status\": {\n            \"type\": \"number\"\n        },\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"value\": {\n                    \"type\": \"number\"\n                },\n                \"date\": {\n                    \"type\": \"string\"\n                },\n                \"userId\": {\n                    \"type\": \"string\"\n                },\n                \"_id\": {\n                    \"type\": \"string\"\n                },\n                \"created_at\": {\n                    \"type\": \"string\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "updateWater",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/water/:cardId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								":cardId"
+							],
+							"variable": [
+								{
+									"key": "cardId",
+									"value": "67cdb43fdf3cb45e2d566f06"
+								}
+							]
+						},
+						"description": "Updated info about amout of water or date"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteWater",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/:cardId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								":cardId"
+							],
+							"variable": [
+								{
+									"key": "cardId",
+									"value": "67cdb43fdf3cb45e2d566f06"
+								}
+							]
+						},
+						"description": "Delete info about water"
+					},
+					"response": []
+				},
+				{
+					"name": "getWaterDay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/day?date=2025-03-01",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								"day"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-03-01"
+								}
+							]
+						},
+						"description": "Get info about amout water of the day"
+					},
+					"response": []
+				},
+				{
+					"name": "getWaterMonth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/month?month=2025-03",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								"month"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "2025-03"
+								}
+							]
+						},
+						"description": "Get info about amout water of the month"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "get-oauth-url",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/get-oauth-url",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"get-oauth-url"
+							]
 						}
 					},
 					"response": [
 						{
-							"name": "water",
+							"name": "get-oauth-url",
 							"originalRequest": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"value\": \"150\",\n    \"date\": \"2025-03-07\",\n    \"time\": \"11:11\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{base_url}}/water",
+									"raw": "https://project-aqt-api.onrender.com/auth/get-oauth-url",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
-										"water"
+										"auth",
+										"get-oauth-url"
 									]
 								}
 							},
@@ -1680,8 +1851,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
-									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:11:50 GMT"
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
 								},
 								{
 									"key": "Content-Type",
@@ -1689,59 +1868,127 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "173"
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-sU8DzrJ/o6iyxuGhatjG769rewo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 10:28:19 GMT"
 								},
 								{
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
-									"key": "access-control-allow-origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"104-tMjmf1QQYWyP3cZ9p0lvWsy0WzI\""
-								},
-								{
-									"key": "rndr-id",
-									"value": "7188c8a0-fda6-4fee"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "x-render-origin-server",
-									"value": "Render"
-								},
-								{
-									"key": "cf-cache-status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "91c8f7be2bb6ca2d-KBP"
-								},
-								{
-									"key": "alt-svc",
-									"value": "h3=\":443\"; ma=86400"
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 201,\n    \"message\": \"Sucsesfully add amount water\",\n    \"data\": {\n        \"value\": 150,\n        \"date\": \"2025-03-07\",\n        \"time\": \"11:11\",\n        \"userId\": \"67c99a0db345235733aa25ec\",\n        \"_id\": \"67cab856686216dc35c58a6c\",\n        \"created_at\": \"2025-03-07T09:11:50.906Z\",\n        \"updated_at\": \"2025-03-07T09:11:50.906Z\"\n    }\n}"
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully get Google OAuth url!\",\n    \"data\": {\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fconfirm-google-auth\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "confirm-oauth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/confirm-oauth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"confirm-oauth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "confirm-oauth",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://project-aqt-api.onrender.com/auth/confirm-oauth",
+									"protocol": "https",
+									"host": [
+										"project-aqt-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"confirm-oauth"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-pvbYJoQnIQ3v5bYXPRJVFwEm88A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 10:29:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request\",\n        \"errors\": [\n            {\n                \"message\": \"\\\"code\\\" is not allowed to be empty\",\n                \"path\": [\n                    \"code\"\n                ],\n                \"type\": \"string.empty\",\n                \"context\": {\n                    \"label\": \"code\",\n                    \"value\": \"\",\n                    \"key\": \"code\"\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -1783,7 +2030,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http://localhost:3000",
+			"value": "https://project-aqt-api.onrender.com",
 			"type": "string"
 		},
 		{
@@ -1795,6 +2042,12 @@
 		{
 			"key": "access_token",
 			"value": ""
+		},
+		{
+			"key": "base_url_testing",
+			"value": "https://project-aqt-api-testing.onrender.com",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
