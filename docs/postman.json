@@ -48,12 +48,9 @@
                   }
                 },
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/register",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/users/register",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
                     "users",
@@ -174,7 +171,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"password\" \n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -199,7 +196,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "cookie": [],
-              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully logged in an user!\",\n    \"data\": {\n        \"accessToken\": \"6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW\"\n    }\n}"
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully logged in an user!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
             },
             {
               "name": "login",
@@ -207,7 +204,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"BadPassword\" \n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -237,7 +234,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dvankevich@5pro-software.ne\",\n    \"password\": \"Pa$$w0rd\" \n}",
+                  "raw": "{\n    \"email\": \"nonregistered@mail.com\",\n    \"password\": \"Pa$$w0rd\" \n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -301,7 +298,7 @@
           },
           "response": [
             {
-              "name": "/auth/logout Copy",
+              "name": "logout",
               "originalRequest": {
                 "method": "POST",
                 "body": {
@@ -314,15 +311,11 @@
                   }
                 },
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/logout",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/logout",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
-                    "users",
                     "logout"
                   ]
                 }
@@ -386,7 +379,28 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "cookie": [],
-              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully refreshed a session!\",\n    \"data\": {\n        \"accessToken\": \"5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC\"\n    }\n}"
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully refreshed a session!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
+            },
+            {
+              "name": "refresh",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{base_url}}/users/refresh",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "refresh"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
             }
           ]
         },
@@ -421,7 +435,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dvankevich@5pro-software.net\"\n}",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -456,7 +470,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw\",\n    \"password\": \"password\"\n}",
+              "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -481,7 +495,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M4NzhkNGNlNTY1N2Y5ZDllNjVhNjciLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDExOTM1NzMsImV4cCI6MTc0MTE5NDQ3M30.pq9bYSn-_X__PcbSiUK363v3Xj_5PYX3IJJM9o85ZeI\",\n    \"password\": \"password\"\n}",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -514,7 +528,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw\",\n    \"password\": \"password\"\n}",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -561,12 +575,9 @@
               "originalRequest": {
                 "method": "GET",
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/userinfo",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/users/userinfo",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
                     "users",
@@ -578,7 +589,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "cookie": [],
-              "body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"dvankevich@5pro-software.net\",\n        \"gender\": \"man\",\n        \"weight\": 0,\n        \"dailySportTime\": 2,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-06T12:51:42.608Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+              "body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67cabb8b686216dc35c58a85\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"woman\",\n        \"weight\": 0,\n        \"dailySportTime\": 0,\n        \"dailyNorm\": 1500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-07T09:25:31.211Z\",\n        \"updatedAt\": \"2025-03-11T12:33:44.210Z\"\n    }\n}"
             }
           ]
         },
@@ -707,7 +718,7 @@
               "code": 200,
               "_postman_previewlanguage": "json",
               "cookie": [],
-              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"dvankevich@5pro-software.net\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
             }
           ]
         },
@@ -732,12 +743,9 @@
               "originalRequest": {
                 "method": "GET",
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/users/registered-users",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/users/registered-users",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
                     "users",
@@ -794,7 +802,66 @@
             },
             "description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time. Upon successful execution, the response will be in JSON format with a status code of 200.\n\n### Response\n\nThe response will be in the form of a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"status\": {\n            \"type\": \"number\"\n        },\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"value\": {\n                    \"type\": \"number\"\n                },\n                \"date\": {\n                    \"type\": \"string\"\n                },\n                \"userId\": {\n                    \"type\": \"string\"\n                },\n                \"_id\": {\n                    \"type\": \"string\"\n                },\n                \"created_at\": {\n                    \"type\": \"string\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```"
           },
-          "response": []
+          "response": [
+            {
+              "name": "addWater",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"value\":250,\r\n  \"date\":\"2025-03-11T12:15\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Access token expired\"\n    }\n}"
+            },
+            {
+              "name": "addWater",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"value\":250,\r\n  \"date\":\"2025-03-11T12:15\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"message\": \"Sucsesfully add amount water\",\n    \"data\": {\n        \"value\": 250,\n        \"date\": \"2025-03-11T12:15\",\n        \"userId\": \"67cabb8b686216dc35c58a85\",\n        \"_id\": \"67d03e958f39947802e7ba34\",\n        \"created_at\": \"2025-03-11T13:45:57.761Z\",\n        \"updated_at\": \"2025-03-11T13:45:57.761Z\"\n    }\n}"
+            }
+          ]
         },
         {
           "name": "updateWater",
@@ -827,7 +894,116 @@
             },
             "description": "Updated info about amout of water or date"
           },
-          "response": []
+          "response": [
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f06"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+            },
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f0"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+            },
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67d03e958f39947802e7ba34"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully updated amount water\",\n    \"data\": {\n        \"_id\": \"67d03e958f39947802e7ba34\",\n        \"value\": 500,\n        \"date\": \"2025-03-08T10:20\",\n        \"userId\": \"67cabb8b686216dc35c58a85\",\n        \"created_at\": \"2025-03-11T13:45:57.761Z\",\n        \"updated_at\": \"2025-03-11T13:47:41.200Z\"\n    }\n}"
+            }
+          ]
         },
         {
           "name": "deleteWater",
@@ -851,7 +1027,89 @@
             },
             "description": "Delete info about water"
           },
-          "response": []
+          "response": [
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f06"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+            },
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f0"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+            },
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67d03e958f39947802e7ba34"
+                    }
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "plain",
+              "cookie": [],
+              "body": null
+            }
+          ]
         },
         {
           "name": "getWaterDay",
@@ -875,7 +1133,62 @@
             },
             "description": "Get info about amout water of the day"
           },
-          "response": []
+          "response": [
+            {
+              "name": "getWaterDay",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/day?date=2025-03-11",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "day"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2025-03-11"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the day\",\n    \"data\": [\n        {\n            \"_id\": \"67d02dedbcb5126983f2ad47\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T11:00\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:34:53.667Z\",\n            \"updated_at\": \"2025-03-11T12:34:53.667Z\"\n        },\n        {\n            \"_id\": \"67d02dfbbcb5126983f2ad4b\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T12:15\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:35:07.241Z\",\n            \"updated_at\": \"2025-03-11T12:35:07.241Z\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "getWaterDay",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/day?date=2025-03-11",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "day"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2025-03-11"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+            }
+          ]
         },
         {
           "name": "getWaterMonth",
@@ -899,7 +1212,62 @@
             },
             "description": "Get info about amout water of the month"
           },
-          "response": []
+          "response": [
+            {
+              "name": "getWaterMonth",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/month?month=2025-03",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "month"
+                  ],
+                  "query": [
+                    {
+                      "key": "month",
+                      "value": "2025-03"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the month\",\n    \"data\": {\n        \"2025-03-11\": 500\n    }\n}"
+            },
+            {
+              "name": "getWaterMonth",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/month?month=2025-03",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "month"
+                  ],
+                  "query": [
+                    {
+                      "key": "month",
+                      "value": "2025-03"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+            }
+          ]
         }
       ]
     },
@@ -927,12 +1295,9 @@
               "originalRequest": {
                 "method": "GET",
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/auth/get-oauth-url",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/auth/get-oauth-url",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
                     "auth",
@@ -987,12 +1352,9 @@
                   }
                 },
                 "url": {
-                  "raw": "https://project-aqt-api.onrender.com/auth/confirm-oauth",
-                  "protocol": "https",
+                  "raw": "{{base_url}}/auth/confirm-oauth",
                   "host": [
-                    "project-aqt-api",
-                    "onrender",
-                    "com"
+                    "{{base_url}}"
                   ],
                   "path": [
                     "auth",
