@@ -49,10 +49,10 @@ export const requestResetEmailController = async (req, res) => {
   });
 };
 
-export const getRegisteredUserController = async (req, res) => {
-  const userCount = await UsersCollection.countDocuments();
+export const getCountUsersController = async (req, res) => {
+  const usersCount = await UsersCollection.countDocuments();
   res.json({
-    message: `Total count of registered users are ${userCount} `,
+    message: `Total count of registered users are ${usersCount} `,
     status: 200,
   });
 };

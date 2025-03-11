@@ -7,7 +7,7 @@ import {
   resetPasswordSchema,
 } from '../validation/auth.js';
 import {
-  getRegisteredUserController,
+  getCountUsersController,
   infoUserController,
   loginUserController,
   logoutUserController,
@@ -53,7 +53,7 @@ router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
 router.get('/userinfo', authenticate, ctrlWrapper(infoUserController));
 
-router.get('/registered-users', ctrlWrapper(getRegisteredUserController));
+router.get('/count', ctrlWrapper(getCountUsersController));
 
 router.patch(
   '/userinfo',
