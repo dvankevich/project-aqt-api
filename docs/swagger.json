@@ -945,6 +945,46 @@
         }
       }
     },
+    "/users/registered-users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "registered-users",
+        "description": "registered-users",
+        "operationId": "registeredUsers",
+        "responses": {
+          "200": {
+            "description": "registered-users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Total count of registered users are 24 "
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "registered-users": {
+                    "value": {
+                      "message": "Total count of registered users are 24 ",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/water": {
       "post": {
         "tags": [

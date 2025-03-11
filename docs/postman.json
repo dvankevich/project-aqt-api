@@ -714,7 +714,17 @@
         {
           "name": "registered-users",
           "request": {
-            "method": "GET"
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/users/registered-users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "registered-users"
+              ]
+            }
           },
           "response": [
             {

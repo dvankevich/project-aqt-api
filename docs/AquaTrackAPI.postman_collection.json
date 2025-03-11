@@ -1546,7 +1546,17 @@
 					"name": "registered-users",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/registered-users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"registered-users"
+							]
+						}
 					},
 					"response": [
 						{
