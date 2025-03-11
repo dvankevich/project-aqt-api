@@ -5,7 +5,6 @@ info:
   contact: {}
 servers:
 - url: https://project-aqt-api.onrender.com
-- url: http://localhost:3000
 paths:
   /users/register:
     post:
@@ -34,63 +33,6 @@ paths:
       responses:
         '201':
           description: register
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c90abe7962c917-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '265'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:24:49 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"173-05PHcWJ5ygiT/vvg4AkaBuSlxHU"
-            rndr-id:
-              schema:
-                type: string
-                example: 38a9fe5f-3b57-4b14
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -149,63 +91,6 @@ paths:
                     status: 201
         '400':
           description: register
-          headers:
-            CF-Cache-Status:
-              schema:
-                type: string
-                example: DYNAMIC
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c90e8abcbec916-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '155'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:27:24 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            etag:
-              schema:
-                type: string
-                example: W/"f1-blAD7FN1cZWHLs9WByB8fuADDQQ"
-            rndr-id:
-              schema:
-                type: string
-                example: 2467ed4a-fc49-4e15
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -280,63 +165,6 @@ paths:
                     status: 400
         '409':
           description: register
-          headers:
-            CF-Cache-Status:
-              schema:
-                type: string
-                example: DYNAMIC
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f875596cca2d-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '65'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:12:20 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            etag:
-              schema:
-                type: string
-                example: W/"4a-91SI7bM4a1lfW0t/b2l79ZLkfug"
-            rndr-id:
-              schema:
-                type: string
-                example: 21567d1e-a559-4f23
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -388,67 +216,6 @@ paths:
       responses:
         '200':
           description: login
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f8cb785aca2d-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '111'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:12:34 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            Set-Cookie:
-              schema:
-                type: string
-                example: sessionId=j%3A%2267cab882686216dc35c58a71%22; Path=/; Expires=Sat, 08 Mar 2025 09:12:34 GMT; HttpOnly
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"7c-WnqwEUh8ct7mQsCCy9Y5FoIlpj8"
-            rndr-id:
-              schema:
-                type: string
-                example: 272a8f12-1983-41ff
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -475,63 +242,6 @@ paths:
                     status: 200
         '401':
           description: login
-          headers:
-            CF-Cache-Status:
-              schema:
-                type: string
-                example: DYNAMIC
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c907eb291677bb-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '58'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:22:53 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            etag:
-              schema:
-                type: string
-                example: W/"4e-ASANtesC5lIOvll+QiIuMlq0hb4"
-            rndr-id:
-              schema:
-                type: string
-                example: 0bb45fcf-83ab-4525
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -558,63 +268,6 @@ paths:
                     status: 401
         '404':
           description: login
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c908f7b84d77bb-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '65'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:23:36 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"4c-LpvGC5TK1u9Uktc9GoZ8/HXbYTc"
-            rndr-id:
-              schema:
-                type: string
-                example: f0bd26d8-5e4e-4f28
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -655,51 +308,6 @@ paths:
       responses:
         '204':
           description: /auth/logout Copy
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c9065d3bc577bb-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:21:49 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            Set-Cookie:
-              schema:
-                type: string
-                example: refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            rndr-id:
-              schema:
-                type: string
-                example: 7d37ca1a-a80e-45b4
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content: {}
   /users/refresh:
     post:
@@ -711,67 +319,6 @@ paths:
       responses:
         '200':
           description: refresh
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8faee8a5424b0-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '114'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:14:01 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            Set-Cookie:
-              schema:
-                type: string
-                example: sessionId=j%3A%2267cab8d9686216dc35c58a79%22; Path=/; Expires=Sat, 08 Mar 2025 09:14:01 GMT; HttpOnly
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"7e-kIEXRccPcza2O8nlO5l6mPt8BD4"
-            rndr-id:
-              schema:
-                type: string
-                example: da319b8b-8d02-4430
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -819,63 +366,6 @@ paths:
       responses:
         '200':
           description: request-reset-email
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8fb65feeb24b0-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '70'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:14:20 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"50-g+cJaatAFPyGgTYM7mweEjJra50"
-            rndr-id:
-              schema:
-                type: string
-                example: 17d9d68b-89aa-4704
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -923,63 +413,6 @@ paths:
       responses:
         '200':
           description: reset-password
-          headers:
-            CF-Cache-Status:
-              schema:
-                type: string
-                example: DYNAMIC
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c905a19e9077bb-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '64'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:21:20 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            etag:
-              schema:
-                type: string
-                example: W/"45-uSWy0Dxg3289U23ZYgR8c2fZRek"
-            rndr-id:
-              schema:
-                type: string
-                example: ea9302cb-272f-4a0a
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -1002,63 +435,6 @@ paths:
                     status: 200
         '401':
           description: reset-password
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c90503bc0377bb-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '69'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:20:54 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"4d-kVvI8HGTNfw5+nlKt+8syA2V4o4"
-            rndr-id:
-              schema:
-                type: string
-                example: 5e82d1d5-9e60-4d75
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -1093,63 +469,6 @@ paths:
       responses:
         '200':
           description: userinfo
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f4ed0aab2d97-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '270'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:09:55 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"17c-YPIRXGdFUK8rUGAIPWyv8X0IbX4"
-            rndr-id:
-              schema:
-                type: string
-                example: c000241e-0d69-40fa
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -1246,63 +565,6 @@ paths:
       responses:
         '200':
           description: userinfo
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f67c0fa8ca2d-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '294'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:11:00 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"18c-e6wW6QMo3xKM4lwwhCMqhkOtRcU"
-            rndr-id:
-              schema:
-                type: string
-                example: fefd0a13-5ea4-4d15
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
           content:
             application/json:
               schema:
@@ -1363,222 +625,56 @@ paths:
                       weight: 90
                     message: Successfully patched a user!
                     status: 200
-  /water/day:
-    get:
-      tags:
-      - water
-      summary: day
-      description: day
-      operationId: day
-      responses:
-        '200':
-          description: day
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f731fd1aca2d-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '387'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:11:28 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"493-OPzSZZsK3c//bjax1smdRDlhWKg"
-            rndr-id:
-              schema:
-                type: string
-                example: b71a5a45-f294-4d9b
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            _id:
-                              type: string
-                              example: 67ca0ced9f3f17e442b9e8e5
-                            created_at:
-                              type: string
-                              example: 2025-03-06T21:00:29.889Z
-                            date:
-                              type: string
-                              example: 12/05/2026
-                            time:
-                              type: string
-                              example: 22:00
-                            updated_at:
-                              type: string
-                              example: 2025-03-06T21:00:40.561Z
-                            userId:
-                              type: string
-                              example: 67ca07be07aae24238f6e1c6
-                            value:
-                              type: number
-                              example: 500
-                        example:
-                        - _id: 67ca0ced9f3f17e442b9e8e5
-                          created_at: 2025-03-06T21:00:29.889Z
-                          date: 12/05/2026
-                          time: 22:00
-                          updated_at: 2025-03-06T21:00:40.561Z
-                          userId: 67ca07be07aae24238f6e1c6
-                          value: 500
-                        - _id: 67ca0e5a3006eaa0c3ffa47d
-                          created_at: 2025-03-06T21:06:34.714Z
-                          date: 12/05/2026
-                          time: 18:00
-                          updated_at: 2025-03-06T21:06:34.714Z
-                          userId: 67ca07be07aae24238f6e1c6
-                          value: 150
-                        - _id: 67ca0e703006eaa0c3ffa483
-                          created_at: 2025-03-06T21:06:56.457Z
-                          date: 12/05/2026
-                          time: 18:00
-                          updated_at: 2025-03-06T21:06:56.457Z
-                          userId: 67ca07be07aae24238f6e1c6
-                          value: 50
-                        - _id: 67cab6b43b867a8ed744b97b
-                          created_at: 2025-03-07T09:04:52.258Z
-                          date: 2025-03-07
-                          time: 11:04
-                          updated_at: 2025-03-07T09:04:52.258Z
-                          userId: 67c99a0db345235733aa25ec
-                          value: 200
-                        - _id: 67cab6ef3b867a8ed744b97f
-                          created_at: 2025-03-07T09:05:51.649Z
-                          date: 2025-03-07
-                          time: 11:05
-                          updated_at: 2025-03-07T09:05:51.649Z
-                          userId: 67c99a0db345235733aa25ec
-                          value: 150
-                      hasNextPage:
-                        type: boolean
-                        example: false
-                      hasPreviousPage:
-                        type: boolean
-                        example: false
-                      page:
-                        type: number
-                        example: 1
-                      perPage:
-                        type: number
-                        example: 10
-                      totalItems:
-                        type: number
-                        example: 5
-                      totalPages:
-                        type: number
-                        example: 1
-                  message:
-                    type: string
-                    example: Sucsesfully found amount water of the day
-                  status:
-                    type: number
-                    example: 200
-              examples:
-                day:
-                  value:
-                    data:
-                      data:
-                      - _id: 67ca0ced9f3f17e442b9e8e5
-                        created_at: 2025-03-06T21:00:29.889Z
-                        date: 12/05/2026
-                        time: 22:00
-                        updated_at: 2025-03-06T21:00:40.561Z
-                        userId: 67ca07be07aae24238f6e1c6
-                        value: 500
-                      - _id: 67ca0e5a3006eaa0c3ffa47d
-                        created_at: 2025-03-06T21:06:34.714Z
-                        date: 12/05/2026
-                        time: 18:00
-                        updated_at: 2025-03-06T21:06:34.714Z
-                        userId: 67ca07be07aae24238f6e1c6
-                        value: 150
-                      - _id: 67ca0e703006eaa0c3ffa483
-                        created_at: 2025-03-06T21:06:56.457Z
-                        date: 12/05/2026
-                        time: 18:00
-                        updated_at: 2025-03-06T21:06:56.457Z
-                        userId: 67ca07be07aae24238f6e1c6
-                        value: 50
-                      - _id: 67cab6b43b867a8ed744b97b
-                        created_at: 2025-03-07T09:04:52.258Z
-                        date: 2025-03-07
-                        time: 11:04
-                        updated_at: 2025-03-07T09:04:52.258Z
-                        userId: 67c99a0db345235733aa25ec
-                        value: 200
-                      - _id: 67cab6ef3b867a8ed744b97f
-                        created_at: 2025-03-07T09:05:51.649Z
-                        date: 2025-03-07
-                        time: 11:05
-                        updated_at: 2025-03-07T09:05:51.649Z
-                        userId: 67c99a0db345235733aa25ec
-                        value: 150
-                      hasNextPage: false
-                      hasPreviousPage: false
-                      page: 1
-                      perPage: 10
-                      totalItems: 5
-                      totalPages: 1
-                    message: Sucsesfully found amount water of the day
-                    status: 200
   /water:
     post:
       tags:
       - water
-      summary: water
-      description: water
-      operationId: water
+      summary: addWater
+      description: |-
+        The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time. Upon successful execution, the response will be in JSON format with a status code of 200.
+
+        ### Response
+
+        The response will be in the form of a JSON object with the following schema:
+
+        ``` json
+        {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "number"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number"
+                        },
+                        "date": {
+                            "type": "string"
+                        },
+                        "userId": {
+                            "type": "string"
+                        },
+                        "_id": {
+                            "type": "string"
+                        },
+                        "created_at": {
+                            "type": "string"
+                        },
+                        "updated_at": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+
+         ```
+      operationId: addwater
       requestBody:
         content:
           application/json:
@@ -1587,79 +683,103 @@ paths:
               properties:
                 date:
                   type: string
-                  example: 2025-03-07
-                time:
-                  type: string
-                  example: 11:11
+                  example: 2025-03-09T32:78
                 value:
-                  type: string
-                  example: '150'
+                  type: number
+                  example: 250
             examples:
-              water:
+              addWater:
                 value:
-                  date: 2025-03-07
-                  time: 11:11
-                  value: '150'
+                  date: 2025-03-09T32:78
+                  value: 250
       responses:
         '200':
-          description: water
-          headers:
-            CF-RAY:
-              schema:
-                type: string
-                example: 91c8f7be2bb6ca2d-KBP
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Encoding:
-              schema:
-                type: string
-                example: br
-            Content-Length:
-              schema:
-                type: string
-                example: '173'
-            Date:
-              schema:
-                type: string
-                example: Fri, 07 Mar 2025 09:11:50 GMT
-            Server:
-              schema:
-                type: string
-                example: cloudflare
-            access-control-allow-origin:
-              schema:
-                type: string
-                example: '*'
-            alt-svc:
-              schema:
-                type: string
-                example: h3=":443"; ma=86400
-            cf-cache-status:
-              schema:
-                type: string
-                example: DYNAMIC
-            etag:
-              schema:
-                type: string
-                example: W/"104-tMjmf1QQYWyP3cZ9p0lvWsy0WzI"
-            rndr-id:
-              schema:
-                type: string
-                example: 7188c8a0-fda6-4fee
-            vary:
-              schema:
-                type: string
-                example: Accept-Encoding
-            x-powered-by:
-              schema:
-                type: string
-                example: Express
-            x-render-origin-server:
-              schema:
-                type: string
-                example: Render
+          description: ''
+  /water/{cardId}:
+    delete:
+      tags:
+      - water
+      summary: deleteWater
+      description: Delete info about water
+      operationId: deletewater
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+      - water
+      summary: updateWater
+      description: Updated info about amout of water or date
+      operationId: updatewater
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  example: 2025-03-08T10:20
+                value:
+                  type: number
+                  example: 500
+            examples:
+              updateWater:
+                value:
+                  date: 2025-03-08T10:20
+                  value: 500
+      responses:
+        '200':
+          description: ''
+    parameters:
+    - name: cardId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 67cdb43fdf3cb45e2d566f06
+  /water/day:
+    get:
+      tags:
+      - water
+      summary: getWaterDay
+      description: Get info about amout water of the day
+      operationId: getwaterday
+      parameters:
+      - name: date
+        in: query
+        schema:
+          type: string
+          example: 2025-03-01
+      responses:
+        '200':
+          description: ''
+  /water/month:
+    get:
+      tags:
+      - water
+      summary: getWaterMonth
+      description: Get info about amout water of the month
+      operationId: getwatermonth
+      parameters:
+      - name: month
+        in: query
+        schema:
+          type: string
+          example: 2025-03
+      responses:
+        '200':
+          description: ''
+  /auth/get-oauth-url:
+    get:
+      tags:
+      - auth
+      summary: get-oauth-url
+      description: get-oauth-url
+      operationId: getOauthUrl
+      responses:
+        '200':
+          description: get-oauth-url
           content:
             application/json:
               schema:
@@ -1668,46 +788,119 @@ paths:
                   data:
                     type: object
                     properties:
-                      _id:
+                      url:
                         type: string
-                        example: 67cab856686216dc35c58a6c
-                      created_at:
-                        type: string
-                        example: 2025-03-07T09:11:50.906Z
-                      date:
-                        type: string
-                        example: 2025-03-07
-                      time:
-                        type: string
-                        example: 11:11
-                      updated_at:
-                        type: string
-                        example: 2025-03-07T09:11:50.906Z
-                      userId:
-                        type: string
-                        example: 67c99a0db345235733aa25ec
-                      value:
-                        type: number
-                        example: 150
+                        example: https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fconfirm-google-auth
                   message:
                     type: string
-                    example: Sucsesfully add amount water
+                    example: Successfully get Google OAuth url!
                   status:
                     type: number
-                    example: 201
+                    example: 200
               examples:
-                water:
+                get-oauth-url:
                   value:
                     data:
-                      _id: 67cab856686216dc35c58a6c
-                      created_at: 2025-03-07T09:11:50.906Z
-                      date: 2025-03-07
-                      time: 11:11
-                      updated_at: 2025-03-07T09:11:50.906Z
-                      userId: 67c99a0db345235733aa25ec
-                      value: 150
-                    message: Sucsesfully add amount water
-                    status: 201
+                      url: https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fconfirm-google-auth
+                    message: Successfully get Google OAuth url!
+                    status: 200
+  /auth/confirm-oauth:
+    post:
+      tags:
+      - auth
+      summary: confirm-oauth
+      description: confirm-oauth
+      operationId: confirmOauth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: ''
+            examples:
+              confirm-oauth:
+                value:
+                  code: ''
+      responses:
+        '200':
+          description: ''
+        '400':
+          description: confirm-oauth
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            context:
+                              type: object
+                              properties:
+                                key:
+                                  type: string
+                                  example: code
+                                label:
+                                  type: string
+                                  example: code
+                                value:
+                                  type: string
+                                  example: ''
+                            message:
+                              type: string
+                              example: '"code" is not allowed to be empty'
+                            path:
+                              type: array
+                              items:
+                                type: string
+                                example: code
+                              example:
+                              - code
+                            type:
+                              type: string
+                              example: string.empty
+                        example:
+                        - context:
+                            key: code
+                            label: code
+                            value: ''
+                          message: '"code" is not allowed to be empty'
+                          path:
+                          - code
+                          type: string.empty
+                      message:
+                        type: string
+                        example: Bad Request
+                  message:
+                    type: string
+                    example: BadRequestError
+                  status:
+                    type: number
+                    example: 400
+              examples:
+                confirm-oauth:
+                  value:
+                    data:
+                      errors:
+                      - context:
+                          key: code
+                          label: code
+                          value: ''
+                        message: '"code" is not allowed to be empty'
+                        path:
+                        - code
+                        type: string.empty
+                      message: Bad Request
+                    message: BadRequestError
+                    status: 400
 components:
   securitySchemes:
     bearerAuth:
@@ -1718,4 +911,5 @@ security:
 tags:
 - name: users
 - name: water
+- name: auth
 
