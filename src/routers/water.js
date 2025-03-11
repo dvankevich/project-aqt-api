@@ -10,6 +10,7 @@ import {
   updateAmountWaterController,
 } from '../controllers/water.js';
 import { authenticate } from '../middlewares/authenticate.js';
+import { isValidCardId } from '../middlewares/isValidCardId.js';
 
 const router = Router();
 router.use(authenticate);
@@ -23,9 +24,14 @@ router.post(
 );
 router.patch(
   '/:cardId',
+  isValidCardId,
   validateBody(updateWaterSchema),
   ctrlWrapper(updateAmountWaterController),
 );
-router.delete('/:cardId', ctrlWrapper(deleteAmountWaterController));
+router.delete(
+  '/:cardId',
+  isValidCardId,
+  ctrlWrapper(deleteAmountWaterController),
+);
 
 export default router;
