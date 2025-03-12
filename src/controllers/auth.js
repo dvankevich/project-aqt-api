@@ -52,8 +52,11 @@ export const requestResetEmailController = async (req, res) => {
 export const getCountUsersController = async (req, res) => {
   const usersCount = await UsersCollection.countDocuments();
   res.json({
-    message: `Total count of registered users are ${usersCount} `,
     status: 200,
+    message: `Count of registered users successfully returned!`,
+    data: {
+      users: usersCount,
+    },
   });
 };
 
