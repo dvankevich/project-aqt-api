@@ -33,7 +33,7 @@ const validateDate = (value, helper) => {
   }
   const parsedDate = moment(value);
   const minDate = moment('1970-01-01');
-  const currentDate = moment();
+  const currentDate = moment().format('YYYY-MM-DDT23:59');
 
   if (parsedDate.isBefore(minDate) || parsedDate.isAfter(currentDate)) {
     return helper.message(
