@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 import { isValidObjectId } from 'mongoose';
 
 export const addWaterSchema = Joi.object({
@@ -25,21 +25,22 @@ export const updateWaterSchema = Joi.object({
 });
 
 const validateDate = (value, helper) => {
-  const isValidDate = moment(value).isValid();
-  if (!isValidDate) {
+  const parsedDate = DateTime.fromISO(value);
+  if (!parsedDate.isValid) {
     return helper.message(
       'Date should be a valid date in the format YYYY-MM-DDTHH:mm',
     );
   }
-  const parsedDate = moment(value);
-  const minDate = moment('1970-01-01');
-  const currentDate = moment().format('YYYY-MM-DDT23:59');
 
-  if (parsedDate.isBefore(minDate) || parsedDate.isAfter(currentDate)) {
+  const minDate = DateTime.fromISO('1970-01-01');
+  const currentDate = DateTime.local();
+  // .endOf('day');
+
+  if (parsedDate < minDate || parsedDate > currentDate) {
     return helper.message(
-      `Date should be between ${minDate.format(
-        'YYYY-MM-DD',
-      )} and ${currentDate.format('YYYY-MM-DD')}`,
+      `Date should be between ${minDate.toFormat(
+        'yyyy-MM-dd',
+      )} and ${currentDate.toFormat('yyyy-MM-dd')}`,
     );
   }
   return true;
