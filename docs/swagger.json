@@ -2,6 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "AquaTrackAPI",
+    "description": "The world's best API for water metering\n\nSite - [https://aqua-track-front-group-five.vercel.app/](https://aqua-track-front-group-five.vercel.app/)",
     "version": "1.0.0",
     "contact": {}
   },
@@ -43,19 +44,19 @@
                 "properties": {
                   "email": {
                     "type": "string",
-                    "example": "wuser03@dvankevich.pp.ua"
+                    "example": "wuser05@dvankevich.pp.ua"
                   },
                   "password": {
                     "type": "string",
-                    "example": ""
+                    "example": "password"
                   }
                 }
               },
               "examples": {
                 "register": {
                   "value": {
-                    "email": "wuser03@dvankevich.pp.ua",
-                    "password": ""
+                    "email": "wuser05@dvankevich.pp.ua",
+                    "password": "password"
                   }
                 }
               }
@@ -75,39 +76,11 @@
                       "properties": {
                         "_id": {
                           "type": "string",
-                          "example": "67cabb61686216dc35c58a82"
-                        },
-                        "avatarUrl": {
-                          "type": "string",
-                          "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png"
-                        },
-                        "createdAt": {
-                          "type": "string",
-                          "example": "2025-03-07T09:24:49.399Z"
-                        },
-                        "dailyNorm": {
-                          "type": "number",
-                          "example": 1500
-                        },
-                        "dailySportTime": {
-                          "type": "number",
-                          "example": 0
+                          "example": "67d476d89730a05012a0164f"
                         },
                         "email": {
                           "type": "string",
-                          "example": "wuser01@dvankevich.pp.ua"
-                        },
-                        "gender": {
-                          "type": "string",
-                          "example": "woman"
-                        },
-                        "updatedAt": {
-                          "type": "string",
-                          "example": "2025-03-07T09:24:49.399Z"
-                        },
-                        "weight": {
-                          "type": "number",
-                          "example": 0
+                          "example": "wuser05@dvankevich.pp.ua"
                         }
                       }
                     },
@@ -125,15 +98,8 @@
                   "register": {
                     "value": {
                       "data": {
-                        "_id": "67cabb61686216dc35c58a82",
-                        "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png",
-                        "createdAt": "2025-03-07T09:24:49.399Z",
-                        "dailyNorm": 1500,
-                        "dailySportTime": 0,
-                        "email": "wuser01@dvankevich.pp.ua",
-                        "gender": "woman",
-                        "updatedAt": "2025-03-07T09:24:49.399Z",
-                        "weight": 0
+                        "_id": "67d476d89730a05012a0164f",
+                        "email": "wuser05@dvankevich.pp.ua"
                       },
                       "message": "Successfully registered a user!",
                       "status": 201
@@ -1008,9 +974,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "users": {
+                          "type": "number",
+                          "example": 39
+                        }
+                      }
+                    },
                     "message": {
                       "type": "string",
-                      "example": "Total count of registered users are 29 "
+                      "example": "Count of registered users successfully returned!"
                     },
                     "status": {
                       "type": "number",
@@ -1021,7 +996,10 @@
                 "examples": {
                   "count": {
                     "value": {
-                      "message": "Total count of registered users are 29 ",
+                      "data": {
+                        "users": 39
+                      },
+                      "message": "Count of registered users successfully returned!",
                       "status": 200
                     }
                   }
@@ -1041,7 +1019,7 @@
           "water"
         ],
         "summary": "addWater",
-        "description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time. Upon successful execution, the response will be in JSON format with a status code of 200.\n\n### Response\n\nThe response will be in the form of a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"status\": {\n            \"type\": \"number\"\n        },\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"value\": {\n                    \"type\": \"number\"\n                },\n                \"date\": {\n                    \"type\": \"string\"\n                },\n                \"userId\": {\n                    \"type\": \"string\"\n                },\n                \"_id\": {\n                    \"type\": \"string\"\n                },\n                \"created_at\": {\n                    \"type\": \"string\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```",
+        "description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time.",
         "operationId": "addwater",
         "requestBody": {
           "content": {
@@ -1051,19 +1029,19 @@
                 "properties": {
                   "date": {
                     "type": "string",
-                    "example": "2025-03-11T12:15"
+                    "example": "2025-03-14T20:52"
                   },
                   "value": {
                     "type": "number",
-                    "example": 250
+                    "example": 125
                   }
                 }
               },
               "examples": {
                 "addWater": {
                   "value": {
-                    "date": "2025-03-11T12:15",
-                    "value": 250
+                    "date": "2025-03-14T20:52",
+                    "value": 125
                   }
                 }
               }
@@ -1071,7 +1049,7 @@
           }
         },
         "responses": {
-          "200": {
+          "201": {
             "description": "addWater",
             "content": {
               "application/json": {
@@ -1083,27 +1061,27 @@
                       "properties": {
                         "_id": {
                           "type": "string",
-                          "example": "67d03e958f39947802e7ba34"
+                          "example": "67d47b3af1c2edbd2a2e0a66"
                         },
-                        "created_at": {
+                        "createdAt": {
                           "type": "string",
-                          "example": "2025-03-11T13:45:57.761Z"
+                          "example": "2025-03-14T18:53:46.500Z"
                         },
                         "date": {
                           "type": "string",
-                          "example": "2025-03-11T12:15"
+                          "example": "2025-03-14T20:52"
                         },
-                        "updated_at": {
+                        "updatedAt": {
                           "type": "string",
-                          "example": "2025-03-11T13:45:57.761Z"
+                          "example": "2025-03-14T18:53:46.500Z"
                         },
                         "userId": {
                           "type": "string",
-                          "example": "67cabb8b686216dc35c58a85"
+                          "example": "67cabb61686216dc35c58a82"
                         },
                         "value": {
                           "type": "number",
-                          "example": 250
+                          "example": 125
                         }
                       }
                     },
@@ -1121,12 +1099,12 @@
                   "addWater": {
                     "value": {
                       "data": {
-                        "_id": "67d03e958f39947802e7ba34",
-                        "created_at": "2025-03-11T13:45:57.761Z",
-                        "date": "2025-03-11T12:15",
-                        "updated_at": "2025-03-11T13:45:57.761Z",
-                        "userId": "67cabb8b686216dc35c58a85",
-                        "value": 250
+                        "_id": "67d47b3af1c2edbd2a2e0a66",
+                        "createdAt": "2025-03-14T18:53:46.500Z",
+                        "date": "2025-03-14T20:52",
+                        "updatedAt": "2025-03-14T18:53:46.500Z",
+                        "userId": "67cabb61686216dc35c58a82",
+                        "value": 125
                       },
                       "message": "Sucsesfully add amount water",
                       "status": 201
@@ -1463,7 +1441,7 @@
           "required": true,
           "schema": {
             "type": "string",
-            "example": "67cdb43fdf3cb45e2d566f06"
+            "example": "67cde61cbca4cefb8c9e578a"
           }
         }
       ]
@@ -1482,7 +1460,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2025-03-01"
+              "example": "2025-03-12"
             }
           }
         ],
@@ -1749,7 +1727,7 @@
                       "properties": {
                         "url": {
                           "type": "string",
-                          "example": "https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fconfirm-google-auth"
+                          "example": "https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fauth%2Fconfirm-oauth"
                         }
                       }
                     },
@@ -1767,7 +1745,7 @@
                   "get-oauth-url": {
                     "value": {
                       "data": {
-                        "url": "https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fconfirm-google-auth"
+                        "url": "https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fauth%2Fconfirm-oauth"
                       },
                       "message": "Successfully get Google OAuth url!",
                       "status": 200
