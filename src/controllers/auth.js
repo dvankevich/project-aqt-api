@@ -20,10 +20,15 @@ import { loginOrSignupWithGoogle } from '../services/auth.js';
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
 
+  const userResponse = {
+    _id: user._id,
+    email: user.email,
+  };
+
   res.status(201).json({
     status: 201,
     message: 'Successfully registered a user!',
-    data: user,
+    data: userResponse,
   });
 };
 
@@ -81,14 +86,6 @@ export const logoutUserController = async (req, res) => {
 };
 
 const setupSession = (res, session) => {
-  // res.cookie('refreshToken', session.refreshToken, {
-  //   httpOnly: true,
-  //   expires: new Date(Date.now() + ONE_DAY),
-  // });
-  // res.cookie('sessionId', session._id, {
-  //   httpOnly: true,
-  //   expires: new Date(Date.now() + ONE_DAY),
-  // });
   res.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
