@@ -9,7 +9,6 @@ info:
   contact: {}
 servers:
 - url: https://project-aqt-api-testing.onrender.com
-- url: http://localhost:3000
 paths:
   /users/register:
     post:

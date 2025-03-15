@@ -8,10 +8,7 @@
   },
   "servers": [
     {
-      "url": "https://project-aqt-api-testing.onrender.com"
-    },
-    {
-      "url": "http://localhost:3000"
+      "url": "https://project-aqt-api.onrender.com"
     }
   ],
   "security": [
@@ -33,7 +30,9 @@
   "paths": {
     "/users/register": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "register",
         "description": "register",
         "operationId": "register",
@@ -152,7 +151,9 @@
                                   "type": "string",
                                   "example": "password"
                                 },
-                                "example": ["password"]
+                                "example": [
+                                  "password"
+                                ]
                               },
                               "type": {
                                 "type": "string",
@@ -168,7 +169,9 @@
                                 "value": ""
                               },
                               "message": "\"password\" is not allowed to be empty",
-                              "path": ["password"],
+                              "path": [
+                                "password"
+                              ],
                               "type": "string.empty"
                             }
                           ]
@@ -201,7 +204,9 @@
                               "value": ""
                             },
                             "message": "\"password\" is not allowed to be empty",
-                            "path": ["password"],
+                            "path": [
+                              "password"
+                            ],
                             "type": "string.empty"
                           }
                         ],
@@ -256,12 +261,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/users/login": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "login",
         "description": "login",
         "operationId": "login",
@@ -414,12 +423,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/users/logout": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "logout",
         "description": "logout",
         "operationId": "logout",
@@ -444,7 +457,9 @@
     },
     "/users/refresh": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "refresh",
         "description": "refresh",
         "operationId": "refresh",
@@ -532,12 +547,14 @@
         }
       }
     },
-    "/users/refresh": {
-      "post": {
-        "tags": ["users"],
-        "summary": "refresh",
-        "description": "refresh",
-        "operationId": "refresh",
+    "/users/userinfo": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "userinfo",
+        "description": "userinfo",
+        "operationId": "userinfo",
         "responses": {
           "200": {
             "description": "userinfo",
@@ -622,7 +639,9 @@
         }
       },
       "patch": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "userinfo",
         "description": "userinfo",
         "operationId": "userinfo1",
@@ -754,12 +773,14 @@
         }
       }
     },
-    "/users/request-reset-email": {
-      "post": {
-        "tags": ["users"],
-        "summary": "request-reset-email",
-        "description": "request-reset-email",
-        "operationId": "requestResetEmail",
+    "/users/photo": {
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "photo",
+        "description": "photo",
+        "operationId": "photo",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -906,7 +927,9 @@
     },
     "/users/request-reset-email": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "request-reset-email",
         "description": "request-reset-email",
         "operationId": "requestResetEmail",
@@ -967,12 +990,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/users/reset-password": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "reset-password",
         "description": "reset-password",
         "operationId": "resetPassword",
@@ -1078,12 +1105,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/users/count": {
       "get": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "count",
         "description": "count",
         "operationId": "count",
@@ -1129,12 +1160,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/water": {
       "post": {
-        "tags": ["water"],
+        "tags": [
+          "water"
+        ],
         "summary": "addWater",
         "description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time.",
         "operationId": "addwater",
@@ -1274,12 +1309,14 @@
         }
       }
     },
-    "/users/userinfo": {
-      "get": {
-        "tags": ["users"],
-        "summary": "userinfo",
-        "description": "userinfo",
-        "operationId": "userinfo",
+    "/water/{cardId}": {
+      "delete": {
+        "tags": [
+          "water"
+        ],
+        "summary": "deleteWater",
+        "description": "Delete info about water",
+        "operationId": "deletewater",
         "responses": {
           "204": {
             "description": "deleteWater",
@@ -1368,10 +1405,12 @@
         }
       },
       "patch": {
-        "tags": ["users"],
-        "summary": "userinfo",
-        "description": "userinfo",
-        "operationId": "userinfo1",
+        "tags": [
+          "water"
+        ],
+        "summary": "updateWater",
+        "description": "Updated info about amout of water or date",
+        "operationId": "updatewater",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1497,28 +1536,18 @@
                       "data": {
                         "message": "Bad Request.Invalid parameter."
                       },
-                      "message": "Successfully patched a user!",
-                      "status": 200
+                      "message": "BadRequestError",
+                      "status": 400
                     }
                   }
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/water/day": {
-      "get": {
-        "tags": ["water"],
-        "summary": "day",
-        "description": "day",
-        "operationId": "day",
-        "responses": {
-          "200": {
-            "description": "day",
-            "headers": {
-              "CF-RAY": {
+          },
+          "404": {
+            "description": "updateWater",
+            "content": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -1571,7 +1600,9 @@
     },
     "/water/day": {
       "get": {
-        "tags": ["water"],
+        "tags": [
+          "water"
+        ],
         "summary": "getWaterDay",
         "description": "Get info about amout water of the day",
         "operationId": "getwaterday",
@@ -1681,65 +1712,73 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/water": {
-      "post": {
-        "tags": ["water"],
-        "summary": "water",
-        "description": "water",
-        "operationId": "water",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "date": {
-                    "type": "string",
-                    "example": "2025-03-07"
-                  },
-                  "time": {
-                    "type": "string",
-                    "example": "11:11"
-                  },
-                  "value": {
-                    "type": "string",
-                    "example": "150"
+          },
+          "401": {
+            "description": "getWaterDay",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Please provide Authorization header"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
                   }
-                }
-              },
-              "examples": {
-                "water": {
-                  "value": {
-                    "date": "2025-03-07",
-                    "time": "11:11",
-                    "value": "150"
+                },
+                "examples": {
+                  "getWaterDay": {
+                    "value": {
+                      "data": {
+                        "message": "Please provide Authorization header"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
                   }
                 }
               }
             }
           }
-        },
+        }
+      }
+    },
+    "/water/month": {
+      "get": {
+        "tags": [
+          "water"
+        ],
+        "summary": "getWaterMonth",
+        "description": "Get info about amout water of the month",
+        "operationId": "getwatermonth",
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-03"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "water",
-            "headers": {
-              "CF-RAY": {
-                "schema": {
-                  "type": "string",
-                  "example": "91c8f7be2bb6ca2d-KBP"
-                }
-              },
-              "Connection": {
-                "schema": {
-                  "type": "string",
-                  "example": "keep-alive"
-                }
-              },
-              "Content-Encoding": {
+            "description": "getWaterMonth",
+            "content": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -1821,7 +1860,9 @@
     },
     "/auth/get-oauth-url": {
       "get": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "summary": "get-oauth-url",
         "description": "get-oauth-url",
         "operationId": "getOauthUrl",
@@ -1867,12 +1908,16 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     },
     "/auth/confirm-oauth": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "summary": "confirm-oauth",
         "description": "confirm-oauth",
         "operationId": "confirmOauth",
@@ -1944,7 +1989,9 @@
                                   "type": "string",
                                   "example": "code"
                                 },
-                                "example": ["code"]
+                                "example": [
+                                  "code"
+                                ]
                               },
                               "type": {
                                 "type": "string",
@@ -1960,7 +2007,9 @@
                                 "value": ""
                               },
                               "message": "\"code\" is not allowed to be empty",
-                              "path": ["code"],
+                              "path": [
+                                "code"
+                              ],
                               "type": "string.empty"
                             }
                           ]
@@ -1993,7 +2042,9 @@
                               "value": ""
                             },
                             "message": "\"code\" is not allowed to be empty",
-                            "path": ["code"],
+                            "path": [
+                              "code"
+                            ],
                             "type": "string.empty"
                           }
                         ],
@@ -2008,7 +2059,9 @@
             }
           }
         },
-        "security": [{}]
+        "security": [
+          {}
+        ]
       }
     }
   },
