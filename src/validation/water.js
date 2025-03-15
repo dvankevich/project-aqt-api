@@ -43,8 +43,16 @@ const validateDate = (value, helper) => {
   //   )} currentDate ${currentDate.toFormat('yyyy-MM-ddTHH:mm')}`,
   // );
   // .endOf('day');
+  const currentDateInUTC = currentDate.toUTC();
+  // console.log(
+  //   `localCurrentDateTime ${localCurrentDateTime.toFormat(
+  //     'yyyy-MM-ddTHH:mm',
+  //   )} currentDate ${currentDate.toFormat(
+  //     'yyyy-MM-ddTHH:mm',
+  //   )} currentDateInUTC ${currentDateInUTC.toFormat('yyyy-MM-ddTHH:mm')}`,
+  // );
 
-  if (parsedDate < minDate || parsedDate > currentDate) {
+  if (parsedDate < minDate || parsedDate > currentDateInUTC) {
     return helper.message(
       `Date should be between ${minDate.toFormat(
         'yyyy-MM-dd',
