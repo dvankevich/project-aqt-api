@@ -1,13 +1,13 @@
 import createHttpError from 'http-errors';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 
 const parseDate = (date, minDate, currentDate) => {
   const isString = typeof date === 'string';
   if (!isString)
     throw createHttpError(400, 'Request error: Date should be a string');
 
-  const isValidDate = moment(date).isValid();
-  if (!isValidDate) {
+  const parsedDate = DateTime.fromISO(date);
+  if (!parsedDate.isValid) {
     throw createHttpError(400, 'Request error: parameter has an invalid value');
   }
 
@@ -22,11 +22,15 @@ const parseDate = (date, minDate, currentDate) => {
 };
 
 export const parseDateParams = (query) => {
-  const { date } = query;
+  let { date } = query;
+  console.log(date);
 
-  const minDate = moment('1970-01-01').format('YYYY-MM-DD');
-  const currentDate = moment().format('YYYY-MM-DD');
+  const minDate = DateTime.fromISO('1970-01-01').toFormat('yyyy-MM-dd');
+  const currentDate = DateTime.local().toFormat('yyyy-MM-dd');
 
+  if (!date) {
+    date = currentDate;
+  }
   const parsedDate = parseDate(date, minDate, currentDate);
 
   return {
@@ -35,10 +39,14 @@ export const parseDateParams = (query) => {
 };
 
 export const parseMonthParams = (query) => {
-  const { month } = query;
+  let { month } = query;
 
-  const minDate = moment('1970-01').format('YYYY-MM');
-  const currentDate = moment().format('YYYY-MM');
+  const minDate = DateTime.fromISO('1970-01').toFormat('yyyy-MM');
+  const currentDate = DateTime.local().toFormat('yyyy-MM');
+
+  if (!month) {
+    month = currentDate;
+  }
 
   const parsedMonth = parseDate(month, minDate, currentDate);
 
