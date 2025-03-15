@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "39d23539-6b13-46b0-b921-eec8518f60db",
 		"name": "AquaTrackAPI",
+		"description": "The world's best API for water metering\n\nSite - [https://aqua-track-front-group-five.vercel.app/](https://aqua-track-front-group-five.vercel.app/)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1871068"
 	},
@@ -12,6 +13,9 @@
 				{
 					"name": "register",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -135,99 +139,6 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\",\n    \"password\": \"Pa$$w0rd\" \n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/users/register",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"users",
-										"register"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:24:49 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "265"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"173-05PHcWJ5ygiT/vvg4AkaBuSlxHU\""
-								},
-								{
-									"key": "rndr-id",
-									"value": "38a9fe5f-3b57-4b14"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "x-render-origin-server",
-									"value": "Render"
-								},
-								{
-									"key": "cf-cache-status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "91c90abe7962c917-KBP"
-								},
-								{
-									"key": "alt-svc",
-									"value": "h3=\":443\"; ma=86400"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": 201,\n    \"message\": \"Successfully registered a user!\",\n    \"data\": {\n        \"email\": \"wuser01@dvankevich.pp.ua\",\n        \"gender\": \"woman\",\n        \"weight\": 0,\n        \"dailySportTime\": 0,\n        \"dailyNorm\": 1500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"_id\": \"67cabb61686216dc35c58a82\",\n        \"createdAt\": \"2025-03-07T09:24:49.399Z\",\n        \"updatedAt\": \"2025-03-07T09:24:49.399Z\"\n    }\n}"
-						},
-						{
-							"name": "register",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
 									"raw": "{\n    \"email\": \"wuser03@dvankevich.pp.ua\",\n    \"password\": \"\" \n}",
 									"options": {
 										"raw": {
@@ -313,6 +224,75 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request\",\n        \"errors\": [\n            {\n                \"message\": \"\\\"password\\\" is not allowed to be empty\",\n                \"path\": [\n                    \"password\"\n                ],\n                \"type\": \"string.empty\",\n                \"context\": {\n                    \"label\": \"password\",\n                    \"value\": \"\",\n                    \"key\": \"password\"\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"wuser05@dvankevich.pp.ua\",\n    \"password\": \"password\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "135"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"87-ijuN7ByH2g8OryDikHQ7B9y5ZD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Mar 2025 18:35:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Successfully registered a user!\",\n    \"data\": {\n        \"_id\": \"67d476d89730a05012a0164f\",\n        \"email\": \"wuser05@dvankevich.pp.ua\"\n    }\n}"
 						}
 					]
 				},
@@ -333,11 +313,14 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+							"raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\",\n    \"password\": \"Pa$$w0rd\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,7 +346,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+									"raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"password\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -371,9 +354,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/login",
+									"raw": "https://project-aqt-api.onrender.com/users/login",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -455,7 +441,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully logged in an user!\",\n    \"data\": {\n        \"accessToken\": \"6CGDIC16oCtNC+OYWzgtLnyn0TFjQxNdEKxdbhcW\"\n    }\n}"
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully logged in an user!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
 						},
 						{
 							"name": "login",
@@ -464,7 +450,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+									"raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"BadPassword\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -557,7 +543,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"dvankevich@5pro-software.ne\",\n    \"password\": \"Pa$$w0rd\" \n}",
+									"raw": "{\n    \"email\": \"nonregistered@mail.com\",\n    \"password\": \"Pa$$w0rd\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -684,7 +670,7 @@
 					},
 					"response": [
 						{
-							"name": "/auth/logout Copy",
+							"name": "logout",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -698,12 +684,11 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/logout",
+									"raw": "{{base_url}}/logout",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"users",
 										"logout"
 									]
 								}
@@ -802,9 +787,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/users/refresh",
+									"raw": "https://project-aqt-api.onrender.com/users/refresh",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -886,18 +874,578 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully refreshed a session!\",\n    \"data\": {\n        \"accessToken\": \"5wNYqVB5eg0LU8JWXuSZLwy02YhRmfoTnhTLm7oC\"\n    }\n}"
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully refreshed a session!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
+						},
+						{
+							"name": "refresh",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/refresh",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"refresh"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:42:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"53-v3SJPJYlXO75YIfqqEvNVBlW+DI\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "3befa7c0-aa6d-4533"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb794f5843dbb7-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "userinfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/userinfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"userinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "userinfo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/userinfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"userinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:44:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"16a-9G1yO1xyyV/mhRDuW436gxr6v60\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "961f87ff-70e8-4354"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb7d10a82e36de-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67cabb8b686216dc35c58a85\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"woman\",\n        \"weight\": 0,\n        \"dailySportTime\": 0,\n        \"dailyNorm\": 1500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-07T09:25:31.211Z\",\n        \"updatedAt\": \"2025-03-11T12:33:44.210Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "userinfo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/dima/Pictures/Avatars/3d-illustration-person-with-sunglasses/7309681.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Wuser01",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "man",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "dailySportTime",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "dailyNorm",
+									"value": "2500",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin@dvankevich.pp.ua",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users/userinfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"userinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "userinfo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/home/dima/Pictures/MyPhoto/Avatar/dvankevich.jpeg"
+										},
+										{
+											"key": "name",
+											"value": "Dmytro",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "man",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "90",
+											"type": "text"
+										},
+										{
+											"key": "dailySportTime",
+											"value": "1.5",
+											"type": "text"
+										},
+										{
+											"key": "dailyNorm",
+											"value": "2500",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@dvankevich.pp.ua",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://project-aqt-api.onrender.com/users/userinfo",
+									"protocol": "https",
+									"host": [
+										"project-aqt-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"userinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 07 Mar 2025 09:11:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"18c-e6wW6QMo3xKM4lwwhCMqhkOtRcU\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "fefd0a13-5ea4-4d15"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91c8f67c0fa8ca2d-KBP"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "photo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users/photo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"photo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "photo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/photo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"photo"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-v3SJPJYlXO75YIfqqEvNVBlW+DI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 13:48:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
+						},
+						{
+							"name": "photo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/home/dima/Pictures/Avatars/man150.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/photo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"photo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-PzuwdvfN1mrsznrNH9jxDm7yrLo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 13:52:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67cabb61686216dc35c58a82\",\n        \"email\": \"wuser01@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 75,\n        \"dailySportTime\": 2,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742046722/ko8wjmutnsnxgzizgkvz.jpg\",\n        \"createdAt\": \"2025-03-07T09:24:49.399Z\",\n        \"updatedAt\": \"2025-03-15T13:52:02.892Z\",\n        \"name\": \"Wuser01\"\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "request-reset-email",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\"\n}",
+							"raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -923,7 +1471,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"dvankevich@5pro-software.net\"\n}",
+									"raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -931,9 +1479,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/request-reset-email",
+									"raw": "https://project-aqt-api.onrender.com/users/request-reset-email",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1014,11 +1565,14 @@
 				{
 					"name": "reset-password",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw\",\n    \"password\": \"password\"\n}",
+							"raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1044,7 +1598,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M4NzhkNGNlNTY1N2Y5ZDllNjVhNjciLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDExOTM1NzMsImV4cCI6MTc0MTE5NDQ3M30.pq9bYSn-_X__PcbSiUK363v3Xj_5PYX3IJJM9o85ZeI\",\n    \"password\": \"password\"\n}",
+									"raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1052,9 +1606,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/users/reset-password",
+									"raw": "https://project-aqt-api.onrender.com/users/reset-password",
+									"protocol": "https",
 									"host": [
-										"{{base_url}}"
+										"project-aqt-api",
+										"onrender",
+										"com"
 									],
 									"path": [
 										"users",
@@ -1137,7 +1694,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M5OWEwZGIzNDUyMzU3MzNhYTI1ZWMiLCJlbWFpbCI6ImR2YW5rZXZpY2hANXByby1zb2Z0d2FyZS5uZXQiLCJpYXQiOjE3NDEzMzg4NjAsImV4cCI6MTc0MTMzOTc2MH0.G40cT05zQEe6snvjgXm4LsigglFS3yBsPJNJFDEw5Dw\",\n    \"password\": \"password\"\n}",
+									"raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1226,35 +1783,38 @@
 					]
 				},
 				{
-					"name": "userinfo",
+					"name": "count",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/users/userinfo",
+							"raw": "{{base_url}}/users/count",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"users",
-								"userinfo"
+								"count"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "userinfo",
+							"name": "count",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/users/userinfo",
+									"raw": "{{base_url}}/users/count",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"users",
-										"userinfo"
+										"count"
 									]
 								}
 							},
@@ -1264,7 +1824,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:09:55 GMT"
+									"value": "Fri, 14 Mar 2025 18:43:01 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -1272,15 +1832,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "270"
+									"value": "82"
 								},
 								{
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
-									"key": "access-control-allow-origin",
-									"value": "*"
+									"key": "access-control-allow-credentials",
+									"value": "true"
 								},
 								{
 									"key": "Content-Encoding",
@@ -1288,11 +1848,15 @@
 								},
 								{
 									"key": "etag",
-									"value": "W/\"17c-YPIRXGdFUK8rUGAIPWyv8X0IbX4\""
+									"value": "W/\"5f-y1xU8kk1Vu3Vjx5uIig1Uq/btEI\""
 								},
 								{
 									"key": "rndr-id",
-									"value": "c000241e-0d69-40fa"
+									"value": "cf6769f4-0759-409e"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
 								},
 								{
 									"key": "vary",
@@ -1316,7 +1880,7 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "91c8f4ed0aab2d97-KBP"
+									"value": "9205ea0fddd077b9-KBP"
 								},
 								{
 									"key": "alt-svc",
@@ -1324,197 +1888,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"dvankevich@5pro-software.net\",\n        \"gender\": \"man\",\n        \"weight\": 0,\n        \"dailySportTime\": 2,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-06T12:51:42.608Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "userinfo",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "photo",
-									"type": "file",
-									"src": "/home/dima/Pictures/MyPhoto/Avatar/dvankevich.jpeg"
-								},
-								{
-									"key": "name",
-									"value": "Dmytro",
-									"type": "text"
-								},
-								{
-									"key": "gender",
-									"value": "man",
-									"type": "text"
-								},
-								{
-									"key": "weight",
-									"value": "90",
-									"type": "text"
-								},
-								{
-									"key": "dailySportTime",
-									"value": "1.5",
-									"type": "text"
-								},
-								{
-									"key": "dailyNorm",
-									"value": "2500",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "admin@dvankevich.pp.ua",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/users/userinfo",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"users",
-								"userinfo"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "userinfo",
-							"originalRequest": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "photo",
-											"type": "file",
-											"src": "/home/dima/Pictures/MyPhoto/Avatar/dvankevich.jpeg"
-										},
-										{
-											"key": "name",
-											"value": "Dmytro",
-											"type": "text"
-										},
-										{
-											"key": "gender",
-											"value": "man",
-											"type": "text"
-										},
-										{
-											"key": "weight",
-											"value": "90",
-											"type": "text"
-										},
-										{
-											"key": "dailySportTime",
-											"value": "1.5",
-											"type": "text"
-										},
-										{
-											"key": "dailyNorm",
-											"value": "2500",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "admin@dvankevich.pp.ua",
-											"type": "text",
-											"disabled": true
-										}
-									],
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/users/userinfo",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"users",
-										"userinfo"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:11:00 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "294"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"18c-e6wW6QMo3xKM4lwwhCMqhkOtRcU\""
-								},
-								{
-									"key": "rndr-id",
-									"value": "fefd0a13-5ea4-4d15"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "x-render-origin-server",
-									"value": "Render"
-								},
-								{
-									"key": "cf-cache-status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "91c8f67c0fa8ca2d-KBP"
-								},
-								{
-									"key": "alt-svc",
-									"value": "h3=\":443\"; ma=86400"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"dvankevich@5pro-software.net\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Count of registered users successfully returned!\",\n    \"data\": {\n        \"users\": 39\n    }\n}"
 						}
 					]
 				}
@@ -1524,116 +1898,25 @@
 			"name": "water",
 			"item": [
 				{
-					"name": "day",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/water/day",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"water",
-								"day"
-							]
-						}
-					},
-					"response": [
+					"name": "addWater",
+					"event": [
 						{
-							"name": "day",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/water/day",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"water",
-										"day"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:11:28 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "387"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"493-OPzSZZsK3c//bjax1smdRDlhWKg\""
-								},
-								{
-									"key": "rndr-id",
-									"value": "b71a5a45-f294-4d9b"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "x-render-origin-server",
-									"value": "Render"
-								},
-								{
-									"key": "cf-cache-status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "91c8f731fd1aca2d-KBP"
-								},
-								{
-									"key": "alt-svc",
-									"value": "h3=\":443\"; ma=86400"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the day\",\n    \"data\": {\n        \"data\": [\n            {\n                \"_id\": \"67ca0ced9f3f17e442b9e8e5\",\n                \"value\": 500,\n                \"date\": \"12/05/2026\",\n                \"time\": \"22:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:00:29.889Z\",\n                \"updated_at\": \"2025-03-06T21:00:40.561Z\"\n            },\n            {\n                \"_id\": \"67ca0e5a3006eaa0c3ffa47d\",\n                \"value\": 150,\n                \"date\": \"12/05/2026\",\n                \"time\": \"18:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:06:34.714Z\",\n                \"updated_at\": \"2025-03-06T21:06:34.714Z\"\n            },\n            {\n                \"_id\": \"67ca0e703006eaa0c3ffa483\",\n                \"value\": 50,\n                \"date\": \"12/05/2026\",\n                \"time\": \"18:00\",\n                \"userId\": \"67ca07be07aae24238f6e1c6\",\n                \"created_at\": \"2025-03-06T21:06:56.457Z\",\n                \"updated_at\": \"2025-03-06T21:06:56.457Z\"\n            },\n            {\n                \"_id\": \"67cab6b43b867a8ed744b97b\",\n                \"value\": 200,\n                \"date\": \"2025-03-07\",\n                \"time\": \"11:04\",\n                \"userId\": \"67c99a0db345235733aa25ec\",\n                \"created_at\": \"2025-03-07T09:04:52.258Z\",\n                \"updated_at\": \"2025-03-07T09:04:52.258Z\"\n            },\n            {\n                \"_id\": \"67cab6ef3b867a8ed744b97f\",\n                \"value\": 150,\n                \"date\": \"2025-03-07\",\n                \"time\": \"11:05\",\n                \"userId\": \"67c99a0db345235733aa25ec\",\n                \"created_at\": \"2025-03-07T09:05:51.649Z\",\n                \"updated_at\": \"2025-03-07T09:05:51.649Z\"\n            }\n        ],\n        \"page\": 1,\n        \"perPage\": 10,\n        \"totalItems\": 5,\n        \"totalPages\": 1,\n        \"hasNextPage\": false,\n        \"hasPreviousPage\": false\n    }\n}"
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
-					]
-				},
-				{
-					"name": "water",
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"value\": \"150\",\n    \"date\": \"2025-03-07\",\n    \"time\": \"11:05\"\n}",
+							"raw": "{\r\n  \"value\":125,\r\n  \"date\":\"2025-03-14T20:52\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1648,17 +1931,18 @@
 							"path": [
 								"water"
 							]
-						}
+						},
+						"description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time."
 					},
 					"response": [
 						{
-							"name": "water",
+							"name": "addWater",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"value\": \"150\",\n    \"date\": \"2025-03-07\",\n    \"time\": \"11:11\"\n}",
+									"raw": "{\r\n  \"value\":250,\r\n  \"date\":\"2025-03-11T12:15\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1675,13 +1959,13 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Unauthorized",
+							"code": 401,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Fri, 07 Mar 2025 09:11:50 GMT"
+									"value": "Tue, 11 Mar 2025 13:41:51 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -1689,15 +1973,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "173"
+									"value": "76"
 								},
 								{
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
-									"key": "access-control-allow-origin",
-									"value": "*"
+									"key": "access-control-allow-credentials",
+									"value": "true"
 								},
 								{
 									"key": "Content-Encoding",
@@ -1705,11 +1989,111 @@
 								},
 								{
 									"key": "etag",
-									"value": "W/\"104-tMjmf1QQYWyP3cZ9p0lvWsy0WzI\""
+									"value": "W/\"56-DV/gwxM2zl+1wf3s5J9AtvTnC+g\""
 								},
 								{
 									"key": "rndr-id",
-									"value": "7188c8a0-fda6-4fee"
+									"value": "f7c66e0f-63a2-47fb"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb78c36aaedbb7-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Access token expired\"\n    }\n}"
+						},
+						{
+							"name": "addWater",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"value\":125,\r\n  \"date\":\"2025-03-14T20:52\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/water",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 14 Mar 2025 18:53:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"f9-jCvaHDlS/+5Rpmuqf0/OuOQ/l8k\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "02b36e1d-9d34-43c5"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
 								},
 								{
 									"key": "vary",
@@ -1733,7 +2117,7 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "91c8f7be2bb6ca2d-KBP"
+									"value": "9205f9cd4dc177bf-KBP"
 								},
 								{
 									"key": "alt-svc",
@@ -1741,7 +2125,1282 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": 201,\n    \"message\": \"Sucsesfully add amount water\",\n    \"data\": {\n        \"value\": 150,\n        \"date\": \"2025-03-07\",\n        \"time\": \"11:11\",\n        \"userId\": \"67c99a0db345235733aa25ec\",\n        \"_id\": \"67cab856686216dc35c58a6c\",\n        \"created_at\": \"2025-03-07T09:11:50.906Z\",\n        \"updated_at\": \"2025-03-07T09:11:50.906Z\"\n    }\n}"
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Sucsesfully add amount water\",\n    \"data\": {\n        \"value\": 125,\n        \"date\": \"2025-03-14T20:52\",\n        \"userId\": \"67cabb61686216dc35c58a82\",\n        \"_id\": \"67d47b3af1c2edbd2a2e0a66\",\n        \"createdAt\": \"2025-03-14T18:53:46.500Z\",\n        \"updatedAt\": \"2025-03-14T18:53:46.500Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updateWater",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/water/:cardId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								":cardId"
+							],
+							"variable": [
+								{
+									"key": "cardId",
+									"value": "67d3f0345bb44b0316602862"
+								}
+							]
+						},
+						"description": "Updated info about amout of water or date"
+					},
+					"response": [
+						{
+							"name": "updateWater",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67cdb43fdf3cb45e2d566f06"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:46:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c-0xi105gdg3Hry2N/EZqmzDv3bv0\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "516243a1-c370-4dfc"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb8004ef8ad2db-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+						},
+						{
+							"name": "updateWater",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67cdb43fdf3cb45e2d566f0"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:47:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5e-MU5EXkYVWsBGNaBKbtXE6R0JucE\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "54ab9ab5-1b12-48ca"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb80c17d30d2db-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+						},
+						{
+							"name": "updateWater",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67d03e958f39947802e7ba34"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:47:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ff-iS2joj2Ge225A6CrcczJxdZAYk0\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "34a80888-4969-4069"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb814e5f8ad2db-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully updated amount water\",\n    \"data\": {\n        \"_id\": \"67d03e958f39947802e7ba34\",\n        \"value\": 500,\n        \"date\": \"2025-03-08T10:20\",\n        \"userId\": \"67cabb8b686216dc35c58a85\",\n        \"created_at\": \"2025-03-11T13:45:57.761Z\",\n        \"updated_at\": \"2025-03-11T13:47:41.200Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteWater",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/:cardId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								":cardId"
+							],
+							"variable": [
+								{
+									"key": "cardId",
+									"value": "67cde61cbca4cefb8c9e578a"
+								}
+							]
+						},
+						"description": "Delete info about water"
+					},
+					"response": [
+						{
+							"name": "deleteWater",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67cdb43fdf3cb45e2d566f06"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:48:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c-0xi105gdg3Hry2N/EZqmzDv3bv0\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "f1875f43-cc8d-4be7"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb820978ccd2db-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+						},
+						{
+							"name": "deleteWater",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67cdb43fdf3cb45e2d566f0"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:48:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5e-MU5EXkYVWsBGNaBKbtXE6R0JucE\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "4cef810f-4c59-45e7"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb8296d89bd2db-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+						},
+						{
+							"name": "deleteWater",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/:cardId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										":cardId"
+									],
+									"variable": [
+										{
+											"key": "cardId",
+											"value": "67d03e958f39947802e7ba34"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:50:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "rndr-id",
+									"value": "e0ea7371-8d31-48af"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb84d0c8877aef-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "getWaterDay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/day?date=2025-03-12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								"day"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-03-12"
+								}
+							]
+						},
+						"description": "Get info about amout water of the day"
+					},
+					"response": [
+						{
+							"name": "getWaterDay",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/day?date=2025-03-11",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										"day"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2025-03-11"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:50:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1c7-YVNwR+SWKxG1tCH2sTGt0HasKBE\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "305c2080-8f52-4469"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb85965f597aef-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the day\",\n    \"data\": [\n        {\n            \"_id\": \"67d02dedbcb5126983f2ad47\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T11:00\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:34:53.667Z\",\n            \"updated_at\": \"2025-03-11T12:34:53.667Z\"\n        },\n        {\n            \"_id\": \"67d02dfbbcb5126983f2ad4b\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T12:15\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:35:07.241Z\",\n            \"updated_at\": \"2025-03-11T12:35:07.241Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "getWaterDay",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/day?date=2025-03-11",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										"day"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2025-03-11"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:52:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"65-TQU67kO+BhoVpiU1GDKbJNstClk\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "41abf34d-57e2-4ce4"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb88aaae677aef-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getWaterMonth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/water/month?month=2025-03",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"water",
+								"month"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "2025-03"
+								}
+							]
+						},
+						"description": "Get info about amout water of the month"
+					},
+					"response": [
+						{
+							"name": "getWaterMonth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/month?month=2025-03",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "2025-03"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:51:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"60-bwht7qbmeS2z+3k3Y0yXl29axUY\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "4d1e5474-4add-40f2"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb86fcfca97aef-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the month\",\n    \"data\": {\n        \"2025-03-11\": 500\n    }\n}"
+						},
+						{
+							"name": "getWaterMonth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/month?month=2025-03",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "2025-03"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 13:53:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"65-TQU67kO+BhoVpiU1GDKbJNstClk\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "478c24a2-0698-4f25"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "91eb89383bc57aef-FRA"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "get-oauth-url",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/get-oauth-url",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"get-oauth-url"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-oauth-url",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/get-oauth-url",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"get-oauth-url"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 14 Mar 2025 18:46:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "273"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1ac-G6q5WyHrsQBuj4rMQyGFJ5al3dY\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "d4375d54-4f5b-49cf"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9205efc87ce177aa-KBP"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully get Google OAuth url!\",\n    \"data\": {\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fauth%2Fconfirm-oauth\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "confirm-oauth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/confirm-oauth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"confirm-oauth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "confirm-oauth",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/confirm-oauth",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"confirm-oauth"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-pvbYJoQnIQ3v5bYXPRJVFwEm88A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Mar 2025 10:29:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request\",\n        \"errors\": [\n            {\n                \"message\": \"\\\"code\\\" is not allowed to be empty\",\n                \"path\": [\n                    \"code\"\n                ],\n                \"type\": \"string.empty\",\n                \"context\": {\n                    \"label\": \"code\",\n                    \"value\": \"\",\n                    \"key\": \"code\"\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -1783,7 +3442,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http://localhost:3000",
+			"value": "https://project-aqt-api.onrender.com",
 			"type": "string"
 		},
 		{
@@ -1795,6 +3454,12 @@
 		{
 			"key": "access_token",
 			"value": ""
+		},
+		{
+			"key": "base_url_testing",
+			"value": "https://project-aqt-api-testing.onrender.com",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }

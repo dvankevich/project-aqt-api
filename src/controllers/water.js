@@ -6,14 +6,14 @@ import {
   getAmountWaterMonth,
   updateAmountWater,
 } from '../services/water.js';
-// import { parsePaginationParams } from '../utils/parsePaginationParams.js';
+import { parseDateParams, parseMonthParams } from '../utils/parseDateParams.js';
 
 export const addAmountWaterController = async (req, res) => {
   const userId = req.user._id;
 
   const { body } = req;
   const data = await addAmountWater(body, userId);
-  res.json({
+  res.status(201).json({
     status: 201,
     message: 'Sucsesfully add amount water',
     data: data,
@@ -38,15 +38,19 @@ export const deleteAmountWaterController = async (req, res) => {
   const { cardId } = req.params;
 
   const card = await deleteAmountWater(cardId, userId);
+
   if (!card) {
     notFoundCardHandler();
   }
-  res.status(204).send();
+  res.json({
+    status: 204,
+    message: 'Sucsesfully deleted amount water',
+    data: card,
+  });
 };
 
 export const getAmountWaterDayController = async (req, res) => {
-  // const { page, perPage } = parsePaginationParams(req.query);
-  const { date } = req.query;
+  const { date } = parseDateParams(req.query);
   const userId = req.user._id;
 
   const data = await getAmountWaterDay({ date, userId });
@@ -58,10 +62,10 @@ export const getAmountWaterDayController = async (req, res) => {
 };
 
 export const getAmountWaterMonthController = async (req, res) => {
-  const { date } = req.query;
+  const { month } = parseMonthParams(req.query);
   const userId = req.user._id;
 
-  const data = await getAmountWaterMonth({ userId, date });
+  const data = await getAmountWaterMonth({ userId, month });
   res.json({
     status: 200,
     message: 'Sucsesfully found amount water of the month',

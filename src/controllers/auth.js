@@ -14,14 +14,21 @@ import createHttpError from 'http-errors';
 import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
 import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
 import { getEnvVar } from '../utils/getEnvVar.js';
+import { generateAuthUrl } from '../utils/googleOAuth2.js';
+import { loginOrSignupWithGoogle } from '../services/auth.js';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
 
+  const userResponse = {
+    _id: user._id,
+    email: user.email,
+  };
+
   res.status(201).json({
     status: 201,
     message: 'Successfully registered a user!',
-    data: user,
+    data: userResponse,
   });
 };
 
@@ -47,11 +54,14 @@ export const requestResetEmailController = async (req, res) => {
   });
 };
 
-export const getRegisteredUserController = async (req, res) => {
-  const userCount = await UsersCollection.countDocuments();
+export const getCountUsersController = async (req, res) => {
+  const usersCount = await UsersCollection.countDocuments();
   res.json({
-    message: `Total count of registered users are ${userCount} `,
     status: 200,
+    message: `Count of registered users successfully returned!`,
+    data: {
+      users: usersCount,
+    },
   });
 };
 
@@ -76,14 +86,6 @@ export const logoutUserController = async (req, res) => {
 };
 
 const setupSession = (res, session) => {
-  // res.cookie('refreshToken', session.refreshToken, {
-  //   httpOnly: true,
-  //   expires: new Date(Date.now() + ONE_DAY),
-  // });
-  // res.cookie('sessionId', session._id, {
-  //   httpOnly: true,
-  //   expires: new Date(Date.now() + ONE_DAY),
-  // });
   res.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
     expires: new Date(Date.now() + ONE_DAY),
@@ -162,5 +164,29 @@ export const patchUserController = async (req, res, next) => {
     status: 200,
     message: `Successfully patched a user!`,
     data: result.user,
+  });
+};
+
+export const getGoogleOAuthUrlController = async (req, res) => {
+  const url = generateAuthUrl();
+  res.json({
+    status: 200,
+    message: 'Successfully get Google OAuth url!',
+    data: {
+      url,
+    },
+  });
+};
+
+export const loginWithGoogleController = async (req, res) => {
+  const session = await loginOrSignupWithGoogle(req.body.code);
+  setupSession(res, session);
+
+  res.json({
+    status: 200,
+    message: 'Successfully logged in via Google OAuth!',
+    data: {
+      accessToken: session.accessToken,
+    },
   });
 };

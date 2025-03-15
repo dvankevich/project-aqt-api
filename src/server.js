@@ -13,7 +13,7 @@ import { swaggerDocs } from './middlewares/swaggerDocs.js';
 import router from './routers/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
-const APP_DOMAIN = getEnvVar('APP_DOMAIN');
+//const APP_DOMAIN = getEnvVar('APP_DOMAIN');
 
 export const startServer = () => {
   const app = express();
@@ -27,15 +27,27 @@ export const startServer = () => {
   app.use(cookieParser());
 
   // for cors testing
-  if (APP_DOMAIN == 'https://project-aqt-api.onrender.com') {
-    const corsOptions = {
-      origin: 'http://localhost:5173',
-      credentials: true,
-    };
-    app.use(cors(corsOptions));
-  } else {
-    app.use(cors());
-  }
+  // if (APP_DOMAIN == 'https://project-aqt-api.onrender.com') {
+  //   const corsOptions = {
+  //     origin: 'http://localhost:5173',
+  //     credentials: true,
+  //   };
+  //   app.use(cors(corsOptions));
+  // } else {
+  //   app.use(cors());
+  // }
+
+  const corsOptions = {
+    origin: [
+      'http://localhost:3000', // local swagger 
+      'https://project-aqt-api-testing.onrender.com', // swagger
+      'http://localhost:5173', // local frontend
+      'https://aqua-track-front-group-five.vercel.app',
+    ],
+    credentials: true,
+  };
+
+  app.use(cors(corsOptions));
 
   app.use(
     pino({
@@ -54,6 +66,7 @@ export const startServer = () => {
   app.use('/api', router);
   app.use('/uploads', express.static(UPLOAD_DIR));
   app.use('/api-docs', swaggerDocs());
+
   app.use(router);
 
   app.use('*', notFoundHandler);

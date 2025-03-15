@@ -17,3 +17,5 @@ router.post(
   validateBody(loginWithGoogleOAuthSchema),
   ctrlWrapper(loginWithGoogleController),
 );
+
+export default router;

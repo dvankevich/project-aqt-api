@@ -1,0 +1,1543 @@
+{
+  "info": {
+    "_postman_id": "39d23539-6b13-46b0-b921-eec8518f60db",
+    "name": "AquaTrackAPI",
+    "description": "The world's best API for water metering\n\nSite - [https://aqua-track-front-group-five.vercel.app/](https://aqua-track-front-group-five.vercel.app/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1871068"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"wuser03@dvankevich.pp.ua\",\n    \"password\": \"\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"dvankevich@5pro-software.net\",\n    \"password\": \"Pa$$w0rd\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 409,\n    \"message\": \"ConflictError\",\n    \"data\": {\n        \"message\": \"Email in use\"\n    }\n}"
+            },
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser03@dvankevich.pp.ua\",\n    \"password\": \"\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request\",\n        \"errors\": [\n            {\n                \"message\": \"\\\"password\\\" is not allowed to be empty\",\n                \"path\": [\n                    \"password\"\n                ],\n                \"type\": \"string.empty\",\n                \"context\": {\n                    \"label\": \"password\",\n                    \"value\": \"\",\n                    \"key\": \"password\"\n                }\n            }\n        ]\n    }\n}"
+            },
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser05@dvankevich.pp.ua\",\n    \"password\": \"password\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"message\": \"Successfully registered a user!\",\n    \"data\": {\n        \"_id\": \"67d476d89730a05012a0164f\",\n        \"email\": \"wuser05@dvankevich.pp.ua\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const jsonData = JSON.parse(responseBody);",
+                  "pm.collectionVariables.set(\"access_token\", jsonData.data.accessToken);",
+                  "console.log(pm.collectionVariables.get(\"access_token\"));"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\",\n    \"password\": \"Pa$$w0rd\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"password\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/login",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully logged in an user!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
+            },
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\",\n    \"password\": \"BadPassword\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Unauthorized\"\n    }\n}"
+            },
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"nonregistered@mail.com\",\n    \"password\": \"Pa$$w0rd\" \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"User not found\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"access_token\", \"\");"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "logout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "logout",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/logout",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "logout"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "plain",
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "refresh",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const jsonData = JSON.parse(responseBody);",
+                  "pm.collectionVariables.set(\"access_token\", jsonData.data.accessToken);"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/users/refresh",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "refresh"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "refresh",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/refresh",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "refresh"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully refreshed a session!\",\n    \"data\": {\n        \"accessToken\": \"accessTokenValue\"\n    }\n}"
+            },
+            {
+              "name": "refresh",
+              "originalRequest": {
+                "method": "POST",
+                "url": {
+                  "raw": "{{base_url}}/users/refresh",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "refresh"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "userinfo",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/users/userinfo",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "userinfo"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "userinfo",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/users/userinfo",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "userinfo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67cabb8b686216dc35c58a85\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"woman\",\n        \"weight\": 0,\n        \"dailySportTime\": 0,\n        \"dailyNorm\": 1500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-07T09:25:31.211Z\",\n        \"updatedAt\": \"2025-03-11T12:33:44.210Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "userinfo",
+          "request": {
+            "method": "PATCH",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "photo",
+                  "type": "file",
+                  "src": "/home/dima/Pictures/Avatars/3d-illustration-person-with-sunglasses/7309681.jpg"
+                },
+                {
+                  "key": "name",
+                  "value": "Wuser01",
+                  "type": "text"
+                },
+                {
+                  "key": "gender",
+                  "value": "man",
+                  "type": "text"
+                },
+                {
+                  "key": "weight",
+                  "value": "75",
+                  "type": "text"
+                },
+                {
+                  "key": "dailySportTime",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "dailyNorm",
+                  "value": "2500",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "admin@dvankevich.pp.ua",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/users/userinfo",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "userinfo"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "userinfo",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "photo",
+                      "type": "file",
+                      "src": "/home/dima/Pictures/MyPhoto/Avatar/dvankevich.jpeg"
+                    },
+                    {
+                      "key": "name",
+                      "value": "Dmytro",
+                      "type": "text"
+                    },
+                    {
+                      "key": "gender",
+                      "value": "man",
+                      "type": "text"
+                    },
+                    {
+                      "key": "weight",
+                      "value": "90",
+                      "type": "text"
+                    },
+                    {
+                      "key": "dailySportTime",
+                      "value": "1.5",
+                      "type": "text"
+                    },
+                    {
+                      "key": "dailyNorm",
+                      "value": "2500",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "admin@dvankevich.pp.ua",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ],
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/userinfo",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "userinfo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "photo",
+          "request": {
+            "method": "PATCH",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "photo",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/users/photo",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "photo"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "photo",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "photo",
+                      "type": "file",
+                      "src": []
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/photo",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "photo"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
+            },
+            {
+              "name": "photo",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "photo",
+                      "type": "file",
+                      "src": "/home/dima/Pictures/Avatars/man150.jpeg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/photo",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "photo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67cabb61686216dc35c58a82\",\n        \"email\": \"wuser01@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 75,\n        \"dailySportTime\": 2,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742046722/ko8wjmutnsnxgzizgkvz.jpg\",\n        \"createdAt\": \"2025-03-07T09:24:49.399Z\",\n        \"updatedAt\": \"2025-03-15T13:52:02.892Z\",\n        \"name\": \"Wuser01\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "request-reset-email",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"wuser01@dvankevich.pp.ua\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/request-reset-email",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "request-reset-email"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "request-reset-email",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"wuser02@dvankevich.pp.ua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/request-reset-email",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "request-reset-email"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"message\": \"Reset password email was successfully sent!\",\n    \"status\": 200,\n    \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/reset-password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "reset-password"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "reset-password",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://project-aqt-api.onrender.com/users/reset-password",
+                  "protocol": "https",
+                  "host": [
+                    "project-aqt-api",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "users",
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"jwt expired\"\n    }\n}"
+            },
+            {
+              "name": "reset-password",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"token\": \"reset password token\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/users/reset-password",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"message\": \"Password was successfully reset!\",\n    \"status\": 200,\n    \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/users/count",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "count"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "count",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/users/count",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "users",
+                    "count"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Count of registered users successfully returned!\",\n    \"data\": {\n        \"users\": 39\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "item": [
+        {
+          "name": "addWater",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"value\":125,\r\n  \"date\":\"2025-03-14T20:52\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/water",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "water"
+              ]
+            },
+            "description": "The `POST /water` endpoint allows you to submit water consumption data including the value, date, and time."
+          },
+          "response": [
+            {
+              "name": "addWater",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"value\":250,\r\n  \"date\":\"2025-03-11T12:15\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Access token expired\"\n    }\n}"
+            },
+            {
+              "name": "addWater",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"value\":125,\r\n  \"date\":\"2025-03-14T20:52\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"message\": \"Sucsesfully add amount water\",\n    \"data\": {\n        \"value\": 125,\n        \"date\": \"2025-03-14T20:52\",\n        \"userId\": \"67cabb61686216dc35c58a82\",\n        \"_id\": \"67d47b3af1c2edbd2a2e0a66\",\n        \"createdAt\": \"2025-03-14T18:53:46.500Z\",\n        \"updatedAt\": \"2025-03-14T18:53:46.500Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "updateWater",
+          "request": {
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"value\":500\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/water/:cardId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "water",
+                ":cardId"
+              ],
+              "variable": [
+                {
+                  "key": "cardId",
+                  "value": "67d3f0345bb44b0316602862"
+                }
+              ]
+            },
+            "description": "Updated info about amout of water or date"
+          },
+          "response": [
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f06"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+            },
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f0"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+            },
+            {
+              "name": "updateWater",
+              "originalRequest": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"value\":500,\r\n    \"date\":\"2025-03-08T10:20\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67d03e958f39947802e7ba34"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully updated amount water\",\n    \"data\": {\n        \"_id\": \"67d03e958f39947802e7ba34\",\n        \"value\": 500,\n        \"date\": \"2025-03-08T10:20\",\n        \"userId\": \"67cabb8b686216dc35c58a85\",\n        \"created_at\": \"2025-03-11T13:45:57.761Z\",\n        \"updated_at\": \"2025-03-11T13:47:41.200Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "deleteWater",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/water/:cardId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "water",
+                ":cardId"
+              ],
+              "variable": [
+                {
+                  "key": "cardId",
+                  "value": "67cde61cbca4cefb8c9e578a"
+                }
+              ]
+            },
+            "description": "Delete info about water"
+          },
+          "response": [
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f06"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"NotFoundError\",\n    \"data\": {\n        \"message\": \"Card not found\"\n    }\n}"
+            },
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67cdb43fdf3cb45e2d566f0"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request.Invalid parameter.\"\n    }\n}"
+            },
+            {
+              "name": "deleteWater",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": {
+                  "raw": "{{base_url}}/water/:cardId",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    ":cardId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "cardId",
+                      "value": "67d03e958f39947802e7ba34"
+                    }
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "plain",
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "getWaterDay",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/water/day?date=2025-03-12",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "water",
+                "day"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2025-03-12"
+                }
+              ]
+            },
+            "description": "Get info about amout water of the day"
+          },
+          "response": [
+            {
+              "name": "getWaterDay",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/day?date=2025-03-11",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "day"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2025-03-11"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the day\",\n    \"data\": [\n        {\n            \"_id\": \"67d02dedbcb5126983f2ad47\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T11:00\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:34:53.667Z\",\n            \"updated_at\": \"2025-03-11T12:34:53.667Z\"\n        },\n        {\n            \"_id\": \"67d02dfbbcb5126983f2ad4b\",\n            \"value\": 250,\n            \"date\": \"2025-03-11T12:15\",\n            \"userId\": \"67cabb8b686216dc35c58a85\",\n            \"created_at\": \"2025-03-11T12:35:07.241Z\",\n            \"updated_at\": \"2025-03-11T12:35:07.241Z\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "getWaterDay",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/day?date=2025-03-11",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "day"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2025-03-11"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "getWaterMonth",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/water/month?month=2025-03",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "water",
+                "month"
+              ],
+              "query": [
+                {
+                  "key": "month",
+                  "value": "2025-03"
+                }
+              ]
+            },
+            "description": "Get info about amout water of the month"
+          },
+          "response": [
+            {
+              "name": "getWaterMonth",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/month?month=2025-03",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "month"
+                  ],
+                  "query": [
+                    {
+                      "key": "month",
+                      "value": "2025-03"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Sucsesfully found amount water of the month\",\n    \"data\": {\n        \"2025-03-11\": 500\n    }\n}"
+            },
+            {
+              "name": "getWaterMonth",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/water/month?month=2025-03",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "water",
+                    "month"
+                  ],
+                  "query": [
+                    {
+                      "key": "month",
+                      "value": "2025-03"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "get-oauth-url",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/auth/get-oauth-url",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "get-oauth-url"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get-oauth-url",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/auth/get-oauth-url",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "get-oauth-url"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Successfully get Google OAuth url!\",\n    \"data\": {\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=669721375150-oknftpr3rdkp2mvsf90830gibd98svo5.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fproject-aqt-api.onrender.com%2Fauth%2Fconfirm-oauth\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "confirm-oauth",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"code\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/confirm-oauth",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "confirm-oauth"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "confirm-oauth",
+              "originalRequest": {
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"code\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/confirm-oauth",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "confirm-oauth"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "cookie": [],
+              "body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Bad Request\",\n        \"errors\": [\n            {\n                \"message\": \"\\\"code\\\" is not allowed to be empty\",\n                \"path\": [\n                    \"code\"\n                ],\n                \"type\": \"string.empty\",\n                \"context\": {\n                    \"label\": \"code\",\n                    \"value\": \"\",\n                    \"key\": \"code\"\n                }\n            }\n        ]\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://project-aqt-api.onrender.com",
+      "type": "string"
+    },
+    {
+      "key": "base_url_render",
+      "value": "https://project-aqt-api.onrender.com",
+      "type": "string",
+      "disabled": true
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "base_url_testing",
+      "value": "https://project-aqt-api-testing.onrender.com",
+      "type": "string",
+      "disabled": true
+    }
+  ]
+}

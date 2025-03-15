@@ -14,10 +14,7 @@ const waterSchema = new Schema(
     userId: { type: Schema.Types.ObjectId, ref: 'users' },
   },
   {
-    timestamps: {
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
+    timestamps: true,
     versionKey: false,
   },
 );
