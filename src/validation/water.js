@@ -35,28 +35,25 @@ const validateDate = (value, helper) => {
   const minDate = DateTime.fromISO('1970-01-01');
   const localCurrentDateTime = DateTime.local();
   const zoneName = localCurrentDateTime.zoneName;
-  const currentDate = localCurrentDateTime.setZone(zoneName);
-  // console.log(zoneName, currentDate);
-  // console.log(
-  //   `localCurrentDateTime ${localCurrentDateTime.toFormat(
-  //     'yyyy-MM-ddTHH:mm',
-  //   )} currentDate ${currentDate.toFormat('yyyy-MM-ddTHH:mm')}`,
-  // );
+  const currentDate = localCurrentDateTime.setZone(zoneName).endOf('day');
+
   // .endOf('day');
   const currentDateInUTC = currentDate.toUTC();
-  // console.log(
-  //   `localCurrentDateTime ${localCurrentDateTime.toFormat(
-  //     'yyyy-MM-ddTHH:mm',
-  //   )} currentDate ${currentDate.toFormat(
-  //     'yyyy-MM-ddTHH:mm',
-  //   )} currentDateInUTC ${currentDateInUTC.toFormat('yyyy-MM-ddTHH:mm')}`,
-  // );
+  const parsedDateInUTC = parsedDate.toUTC();
 
-  if (parsedDate < minDate || parsedDate > currentDateInUTC) {
+  if (parsedDate < minDate || parsedDate > currentDate) {
     return helper.message(
       `Date should be between ${minDate.toFormat(
         'yyyy-MM-dd',
-      )} and ${currentDate.toFormat('yyyy-MM-dd')}`,
+      )} and ${currentDate.toFormat(
+        'yyyy-MM-dd',
+      )}, localCurrentDateTime ${localCurrentDateTime.toFormat(
+        'yyyy-MM-ddTH:mm',
+      )}, currentDateInUTC ${currentDateInUTC.toFormat(
+        'yyyy-MM-ddTH:mm',
+      )} parsedDateInUTC ${parsedDateInUTC.toFormat(
+        'yyyy-MM-ddTH:mm',
+      )},parsedDate ${parsedDate.toFormat('yyyy-MM-ddTH:mm')} `,
     );
   }
   return true;
