@@ -773,6 +773,158 @@
         }
       }
     },
+    "/users/photo": {
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "photo",
+        "description": "photo",
+        "operationId": "photo",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "photo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "photo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "67cabb61686216dc35c58a82"
+                        },
+                        "avatarUrl": {
+                          "type": "string",
+                          "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742046722/ko8wjmutnsnxgzizgkvz.jpg"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2025-03-07T09:24:49.399Z"
+                        },
+                        "dailyNorm": {
+                          "type": "number",
+                          "example": 2500
+                        },
+                        "dailySportTime": {
+                          "type": "number",
+                          "example": 2
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "wuser01@dvankevich.pp.ua"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "example": "man"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Wuser01"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "example": "2025-03-15T13:52:02.892Z"
+                        },
+                        "weight": {
+                          "type": "number",
+                          "example": 75
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully patched a user!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    }
+                  }
+                },
+                "examples": {
+                  "photo": {
+                    "value": {
+                      "data": {
+                        "_id": "67cabb61686216dc35c58a82",
+                        "avatarUrl": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742046722/ko8wjmutnsnxgzizgkvz.jpg",
+                        "createdAt": "2025-03-07T09:24:49.399Z",
+                        "dailyNorm": 2500,
+                        "dailySportTime": 2,
+                        "email": "wuser01@dvankevich.pp.ua",
+                        "gender": "man",
+                        "name": "Wuser01",
+                        "updatedAt": "2025-03-15T13:52:02.892Z",
+                        "weight": 75
+                      },
+                      "message": "Successfully patched a user!",
+                      "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "photo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Session not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "photo": {
+                    "value": {
+                      "data": {
+                        "message": "Session not found"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users/request-reset-email": {
       "post": {
         "tags": [

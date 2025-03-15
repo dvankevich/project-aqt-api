@@ -62,4 +62,11 @@ router.patch(
   ctrlWrapper(patchUserController),
 );
 
+router.patch(
+  '/photo',
+  authenticate,
+  upload.single('photo'),
+  ctrlWrapper(patchUserController),
+);
+
 export default router;

@@ -54,12 +54,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/users/register",
-									"protocol": "https",
+									"raw": "{{base_url}}/users/register",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"users",
@@ -687,12 +684,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/logout",
-									"protocol": "https",
+									"raw": "{{base_url}}/logout",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"logout"
@@ -995,12 +989,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/users/userinfo",
-									"protocol": "https",
+									"raw": "{{base_url}}/users/userinfo",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"users",
@@ -1272,6 +1263,175 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "photo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users/photo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"photo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "photo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/photo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"photo"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-v3SJPJYlXO75YIfqqEvNVBlW+DI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 13:48:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
+						},
+						{
+							"name": "photo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/home/dima/Pictures/Avatars/man150.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/photo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"photo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-PzuwdvfN1mrsznrNH9jxDm7yrLo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 13:52:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67cabb61686216dc35c58a82\",\n        \"email\": \"wuser01@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 75,\n        \"dailySportTime\": 2,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742046722/ko8wjmutnsnxgzizgkvz.jpg\",\n        \"createdAt\": \"2025-03-07T09:24:49.399Z\",\n        \"updatedAt\": \"2025-03-15T13:52:02.892Z\",\n        \"name\": \"Wuser01\"\n    }\n}"
 						}
 					]
 				},
@@ -1648,12 +1808,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/users/count",
-									"protocol": "https",
+									"raw": "{{base_url}}/users/count",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"users",
@@ -1793,12 +1950,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/water",
-									"protocol": "https",
+									"raw": "{{base_url}}/water",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"water"
@@ -2023,12 +2177,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/water/:cardId",
-									"protocol": "https",
+									"raw": "{{base_url}}/water/:cardId",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"water",
@@ -2352,12 +2503,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/water/:cardId",
-									"protocol": "https",
+									"raw": "{{base_url}}/water/:cardId",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"water",
@@ -2643,12 +2791,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/water/day?date=2025-03-11",
-									"protocol": "https",
+									"raw": "{{base_url}}/water/day?date=2025-03-11",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"water",
@@ -2860,12 +3005,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/water/month?month=2025-03",
-									"protocol": "https",
+									"raw": "{{base_url}}/water/month?month=2025-03",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"water",
@@ -3078,12 +3220,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/auth/get-oauth-url",
-									"protocol": "https",
+									"raw": "{{base_url}}/auth/get-oauth-url",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"auth",
@@ -3209,12 +3348,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://project-aqt-api.onrender.com/auth/confirm-oauth",
-									"protocol": "https",
+									"raw": "{{base_url}}/auth/confirm-oauth",
 									"host": [
-										"project-aqt-api",
-										"onrender",
-										"com"
+										"{{base_url}}"
 									],
 									"path": [
 										"auth",
