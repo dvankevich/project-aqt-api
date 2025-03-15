@@ -33,7 +33,15 @@ const validateDate = (value, helper) => {
   }
 
   const minDate = DateTime.fromISO('1970-01-01');
-  const currentDate = DateTime.local();
+  const localCurrentDateTime = DateTime.local();
+  const zoneName = localCurrentDateTime.zoneName;
+  const currentDate = localCurrentDateTime.setZone(zoneName);
+  // console.log(zoneName, currentDate);
+  // console.log(
+  //   `localCurrentDateTime ${localCurrentDateTime.toFormat(
+  //     'yyyy-MM-ddTHH:mm',
+  //   )} currentDate ${currentDate.toFormat('yyyy-MM-ddTHH:mm')}`,
+  // );
   // .endOf('day');
 
   if (parsedDate < minDate || parsedDate > currentDate) {
