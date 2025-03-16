@@ -418,6 +418,32 @@ paths:
                       weight: 0
                     message: User found completely!
                     status: 200
+        '401':
+          description: userinfo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Session not found
+                  message:
+                    type: string
+                    example: UnauthorizedError
+                  status:
+                    type: number
+                    example: 401
+              examples:
+                userinfo:
+                  value:
+                    data:
+                      message: Session not found
+                    message: UnauthorizedError
+                    status: 401
     patch:
       tags:
       - users
@@ -435,7 +461,7 @@ paths:
                   example: '2500'
                 dailySportTime:
                   type: string
-                  example: '1.5'
+                  example: '2'
                 email:
                   type: string
                   example: admin@dvankevich.pp.ua
@@ -444,13 +470,13 @@ paths:
                   example: man
                 name:
                   type: string
-                  example: Dmytro
+                  example: Wuser01
                 photo:
                   type: string
                   format: binary
                 weight:
                   type: string
-                  example: '90'
+                  example: '75'
       responses:
         '200':
           description: userinfo
@@ -514,6 +540,32 @@ paths:
                       weight: 90
                     message: Successfully patched a user!
                     status: 200
+        '401':
+          description: userinfo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Access token expired
+                  message:
+                    type: string
+                    example: UnauthorizedError
+                  status:
+                    type: number
+                    example: 401
+              examples:
+                userinfo:
+                  value:
+                    data:
+                      message: Access token expired
+                    message: UnauthorizedError
+                    status: 401
   /users/photo:
     patch:
       tags:
@@ -1076,7 +1128,7 @@ paths:
         in: query
         schema:
           type: string
-          example: 2025-03-12
+          example: 2025-03-16
       responses:
         '200':
           description: getWaterDay
@@ -1211,6 +1263,32 @@ paths:
                       2025-03-11: 500
                     message: Sucsesfully found amount water of the month
                     status: 200
+        '400':
+          description: getWaterMonth
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 'Request error: parameter has an invalid value'
+                  message:
+                    type: string
+                    example: BadRequestError
+                  status:
+                    type: number
+                    example: 400
+              examples:
+                getWaterMonth:
+                  value:
+                    data:
+                      message: 'Request error: parameter has an invalid value'
+                    message: BadRequestError
+                    status: 400
         '401':
           description: getWaterMonth
           content:
@@ -1388,6 +1466,9 @@ security:
 - bearerAuth: []
 tags:
 - name: users
+  description: users operations
 - name: water
+  description: water operations
 - name: auth
+  description: google oauth operations
 

@@ -22,13 +22,16 @@
   ],
   "tags": [
     {
-      "name": "users"
+      "name": "users",
+      "description": "users operations"
     },
     {
-      "name": "water"
+      "name": "water",
+      "description": "water operations"
     },
     {
-      "name": "auth"
+      "name": "auth",
+      "description": "google oauth operations"
     }
   ],
   "paths": {
@@ -639,6 +642,46 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "userinfo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Session not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "message": "Session not found"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -661,7 +704,7 @@
                   },
                   "dailySportTime": {
                     "type": "string",
-                    "example": "1.5"
+                    "example": "2"
                   },
                   "email": {
                     "type": "string",
@@ -673,7 +716,7 @@
                   },
                   "name": {
                     "type": "string",
-                    "example": "Dmytro"
+                    "example": "Wuser01"
                   },
                   "photo": {
                     "type": "string",
@@ -681,7 +724,7 @@
                   },
                   "weight": {
                     "type": "string",
-                    "example": "90"
+                    "example": "75"
                   }
                 }
               }
@@ -768,6 +811,46 @@
                       },
                       "message": "Successfully patched a user!",
                       "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "userinfo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Access token expired"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "message": "Access token expired"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
                     }
                   }
                 }
@@ -1616,7 +1699,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2025-03-12"
+              "example": "2025-03-16"
             }
           }
         ],
@@ -1813,6 +1896,46 @@
                       },
                       "message": "Sucsesfully found amount water of the month",
                       "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "getWaterMonth",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Request error: parameter has an invalid value"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "BadRequestError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterMonth": {
+                    "value": {
+                      "data": {
+                        "message": "Request error: parameter has an invalid value"
+                      },
+                      "message": "BadRequestError",
+                      "status": 400
                     }
                   }
                 }
@@ -2078,20 +2201,20 @@
         ],
         "properties": {
           "_id": {
-            "description": "User id",
+            "description": "User Id",
             "type": "string",
-            "example": "83cf00c8706c3609f8a91ae9"
+            "example": "67cabb8b686216dc35c58a85"
           },
           "name": {
             "description": "User name",
             "type": "string",
-            "example": "Alex Jonson",
+            "example": "John Connor",
             "default": "User"
           },
           "email": {
             "description": "User email",
             "type": "string",
-            "example": "jonson_a@gmail.com"
+            "example": "jconnor@skynet.mil"
           },
           "gender": {
             "description": "User gender",
@@ -2106,36 +2229,36 @@
           "weight": {
             "description": "User weight in kilograms",
             "type": "number",
-            "example": 67,
+            "example": 55,
             "default": 0
           },
           "dailySportTime": {
-            "description": "User sport time in hours per day",
+            "description": "The time of active participation in sports. Hours",
             "type": "number",
-            "example": 8,
+            "example": 2,
             "default": 0
           },
           "dailyNorm": {
-            "description": "Daily water intake in milliliters",
+            "description": "Daily water norma in milliliters",
             "type": "number",
-            "example": 1700,
+            "example": 2500,
             "default": 1500
           },
           "avatarUrl": {
             "description": "URL to the user profile photo",
             "type": "string",
-            "example": "https://res.cloudinary.com/ddtrmtbl8/image/upload/v1740747328/qbclx8i3i9zchrvi1git.jpg",
-            "default": "https://collection.cloudinary.com/dojuslnjs/d637fb90dcf69166ae1e1c04c01fb63e?"
+            "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742067608/o79lovupqhn7f7jqozta.jpg",
+            "default": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png"
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-10T14:30:00.000Z"
+            "example": "2025-03-07T09:24:49.399Z"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-10T15:00:00.000Z"
+            "example": "2025-03-16T08:49:10.399Z"
           }
         }
       },
@@ -2144,7 +2267,7 @@
         "properties": {
           "_id": {
             "type": "string",
-            "example": "65d1e3c7f1c1234b567890ab"
+            "example": "67d476d89730a05012a0164f"
           },
           "userId": {
             "type": "string",
@@ -2152,28 +2275,28 @@
           },
           "volume": {
             "type": "string",
-            "example": "250",
-            "description": "Amount of water consumed (ml)"
+            "example": "200",
+            "description": "Amount of water ml."
           },
           "day": {
             "type": "string",
-            "example": "2025-03-10",
+            "example": "2025-03-15",
             "description": "Date of intake (YYYY-MM-DD)"
           },
           "time": {
             "type": "string",
-            "example": "14:30",
+            "example": "17:15",
             "description": "Time of intake (HH:mm)"
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-10T14:30:00.000Z"
+            "example": "2025-03-16T09:33:17.837Z"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-10T15:00:00.000Z"
+            "example": "2025-03-16T09:33:17.837Z"
           }
         }
       },
@@ -2182,7 +2305,7 @@
         "properties": {
           "_id": {
             "type": "string",
-            "example": "65d1e3c7f1c1234b567890ab"
+            "example": "67d69add60f2db9d5a29a38b"
           },
           "userId": {
             "type": "string",
@@ -2190,26 +2313,26 @@
           },
           "day": {
             "type": "string",
-            "example": "2025-03-05"
+            "example": "2025-03-16"
           },
           "time": {
             "type": "string",
-            "example": "14:30",
+            "example": "17:15",
             "description": "Time of intake (HH:mm)"
           },
           "amount": {
             "type": "number",
-            "example": 1500
+            "example": 250
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-05T08:30:00.000Z"
+            "example": "2025-03-16T09:33:17.837Z"
           },
           "updatedAt": {
             "type": "string",
             "format": "date-time",
-            "example": "2025-03-05T09:00:00.000Z"
+            "example": "2025-03-16T09:33:17.837Z"
           }
         }
       }
