@@ -18,4 +18,6 @@ router.post(
   ctrlWrapper(loginWithGoogleController),
 );
 
+router.get('/confirm-oauth', ctrlWrapper(loginWithGoogleController));
+
 export default router;
