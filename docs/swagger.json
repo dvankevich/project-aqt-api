@@ -1,7 +1,11 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
     "title": "AquaTrackAPI",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https//www.apache.org/licenses/LICENSE-2.0.html"
+    },
     "description": "The world's best API for water metering\n\nSite - [https://aqua-track-front-group-five.vercel.app/](https://aqua-track-front-group-five.vercel.app/)",
     "version": "1.0.0",
     "contact": {}
@@ -18,13 +22,16 @@
   ],
   "tags": [
     {
-      "name": "users"
+      "name": "users",
+      "description": "users operations"
     },
     {
-      "name": "water"
+      "name": "water",
+      "description": "water operations"
     },
     {
-      "name": "auth"
+      "name": "auth",
+      "description": "google oauth operations"
     }
   ],
   "paths": {
@@ -635,6 +642,46 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "userinfo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Session not found"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "message": "Session not found"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -657,7 +704,7 @@
                   },
                   "dailySportTime": {
                     "type": "string",
-                    "example": "1.5"
+                    "example": "2"
                   },
                   "email": {
                     "type": "string",
@@ -669,7 +716,7 @@
                   },
                   "name": {
                     "type": "string",
-                    "example": "Dmytro"
+                    "example": "Wuser01"
                   },
                   "photo": {
                     "type": "string",
@@ -677,7 +724,7 @@
                   },
                   "weight": {
                     "type": "string",
-                    "example": "90"
+                    "example": "75"
                   }
                 }
               }
@@ -764,6 +811,46 @@
                       },
                       "message": "Successfully patched a user!",
                       "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "userinfo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Access token expired"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "UnauthorizedError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 401
+                    }
+                  }
+                },
+                "examples": {
+                  "userinfo": {
+                    "value": {
+                      "data": {
+                        "message": "Access token expired"
+                      },
+                      "message": "UnauthorizedError",
+                      "status": 401
                     }
                   }
                 }
@@ -1612,7 +1699,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2025-03-12"
+              "example": "2025-03-16"
             }
           }
         ],
@@ -1809,6 +1896,46 @@
                       },
                       "message": "Sucsesfully found amount water of the month",
                       "status": 200
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "getWaterMonth",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Request error: parameter has an invalid value"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "BadRequestError"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  }
+                },
+                "examples": {
+                  "getWaterMonth": {
+                    "value": {
+                      "data": {
+                        "message": "Request error: parameter has an invalid value"
+                      },
+                      "message": "BadRequestError",
+                      "status": 400
                     }
                   }
                 }
@@ -2066,6 +2193,150 @@
     }
   },
   "components": {
+    "schemas": {
+      "user": {
+        "type": "object",
+        "required": [
+          "email"
+        ],
+        "properties": {
+          "_id": {
+            "description": "User Id",
+            "type": "string",
+            "example": "67cabb8b686216dc35c58a85"
+          },
+          "name": {
+            "description": "User name",
+            "type": "string",
+            "example": "John Connor",
+            "default": "User"
+          },
+          "email": {
+            "description": "User email",
+            "type": "string",
+            "example": "jconnor@skynet.mil"
+          },
+          "gender": {
+            "description": "User gender",
+            "type": "string",
+            "enum": [
+              "woman",
+              "man"
+            ],
+            "example": "man",
+            "default": "woman"
+          },
+          "weight": {
+            "description": "User weight in kilograms",
+            "type": "number",
+            "example": 55,
+            "default": 0
+          },
+          "dailySportTime": {
+            "description": "The time of active participation in sports. Hours",
+            "type": "number",
+            "example": 2,
+            "default": 0
+          },
+          "dailyNorm": {
+            "description": "Daily water norma in milliliters",
+            "type": "number",
+            "example": 2500,
+            "default": 1500
+          },
+          "avatarUrl": {
+            "description": "URL to the user profile photo",
+            "type": "string",
+            "example": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742067608/o79lovupqhn7f7jqozta.jpg",
+            "default": "https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-07T09:24:49.399Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-16T08:49:10.399Z"
+          }
+        }
+      },
+      "water": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "67d476d89730a05012a0164f"
+          },
+          "userId": {
+            "type": "string",
+            "example": "64a62c25f5c77f001c5a3d2e"
+          },
+          "volume": {
+            "type": "string",
+            "example": "200",
+            "description": "Amount of water ml."
+          },
+          "day": {
+            "type": "string",
+            "example": "2025-03-15",
+            "description": "Date of intake (YYYY-MM-DD)"
+          },
+          "time": {
+            "type": "string",
+            "example": "17:15",
+            "description": "Time of intake (HH:mm)"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-16T09:33:17.837Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-16T09:33:17.837Z"
+          }
+        }
+      },
+      "waterCard": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "67d69add60f2db9d5a29a38b"
+          },
+          "userId": {
+            "type": "string",
+            "example": "64a62c25f5c77f001c5a3d2e"
+          },
+          "day": {
+            "type": "string",
+            "example": "2025-03-16"
+          },
+          "time": {
+            "type": "string",
+            "example": "17:15",
+            "description": "Time of intake (HH:mm)"
+          },
+          "amount": {
+            "type": "number",
+            "example": 250
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-16T09:33:17.837Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-16T09:33:17.837Z"
+          }
+        }
+      }
+    },
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",

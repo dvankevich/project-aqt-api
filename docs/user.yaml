@@ -1,0 +1,51 @@
+type: object
+required:
+  - email
+properties:
+  _id:
+    description: 'User Id'
+    type: string
+    example: '67cabb8b686216dc35c58a85'
+  name:
+    description: 'User name'
+    type: string
+    example: 'John Connor'
+    default: 'User'
+  email:
+    description: 'User email'
+    type: string
+    example: 'jconnor@skynet.mil'
+  gender:
+    description: 'User gender'
+    type: string
+    enum: ['woman', 'man']
+    example: 'man'
+    default: 'woman'
+  weight:
+    description: 'User weight in kilograms'
+    type: number
+    example: 55
+    default: 0
+  dailySportTime:
+    description: 'The time of active participation in sports. Hours'
+    type: number
+    example: 2
+    default: 0
+  dailyNorm:
+    description: 'Daily water norma in milliliters'
+    type: number
+    example: 2500
+    default: 1500
+  avatarUrl:
+    description: 'URL to the user profile photo'
+    type: string
+    example: 'https://res.cloudinary.com/dvc0lg6q7/image/upload/v1742067608/o79lovupqhn7f7jqozta.jpg'
+    default: 'https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png'
+  createdAt:
+    type: string
+    format: date-time
+    example: '2025-03-07T09:24:49.399Z'
+  updatedAt:
+    type: string
+    format: date-time
+    example: '2025-03-16T08:49:10.399Z'

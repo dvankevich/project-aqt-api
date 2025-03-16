@@ -1,0 +1,7 @@
+  schemas:
+    user:
+      $ref: user.yaml
+    water:
+      $ref: water.yaml
+    waterCard:
+      $ref: waterCard.yaml

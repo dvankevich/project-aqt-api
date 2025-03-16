@@ -1070,6 +1070,94 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 200,\n    \"message\": \"User found completely!\",\n    \"data\": {\n        \"_id\": \"67cabb8b686216dc35c58a85\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"woman\",\n        \"weight\": 0,\n        \"dailySportTime\": 0,\n        \"dailyNorm\": 1500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741163238/person_qyhqpa.png\",\n        \"createdAt\": \"2025-03-07T09:25:31.211Z\",\n        \"updatedAt\": \"2025-03-11T12:33:44.210Z\"\n    }\n}"
+						},
+						{
+							"name": "userinfo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/userinfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"userinfo"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 16 Mar 2025 11:19:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"53-v3SJPJYlXO75YIfqqEvNVBlW+DI\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "d53bcdfd-504b-4daa"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9213db61181377aa-KBP"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Session not found\"\n    }\n}"
 						}
 					]
 				},
@@ -1263,6 +1351,135 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully patched a user!\",\n    \"data\": {\n        \"_id\": \"67c99a0db345235733aa25ec\",\n        \"email\": \"wuser02@dvankevich.pp.ua\",\n        \"gender\": \"man\",\n        \"weight\": 90,\n        \"dailySportTime\": 1.5,\n        \"dailyNorm\": 2500,\n        \"avatarUrl\": \"https://res.cloudinary.com/dvc0lg6q7/image/upload/v1741338659/htywkrmquswyoqji9uhf.jpg\",\n        \"createdAt\": \"2025-03-06T12:50:21.426Z\",\n        \"updatedAt\": \"2025-03-07T09:11:00.198Z\",\n        \"name\": \"Dmytro\"\n    }\n}"
+						},
+						{
+							"name": "userinfo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/home/dima/Pictures/Avatars/3d-illustration-person-with-sunglasses/7309681.jpg"
+										},
+										{
+											"key": "name",
+											"value": "Wuser01",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "man",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "75",
+											"type": "text"
+										},
+										{
+											"key": "dailySportTime",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "dailyNorm",
+											"value": "2500",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@dvankevich.pp.ua",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/userinfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"userinfo"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 16 Mar 2025 11:48:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"56-DV/gwxM2zl+1wf3s5J9AtvTnC+g\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "d371cc67-d35b-4d5f"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "921405400b99ca34-KBP"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Access token expired\"\n    }\n}"
 						}
 					]
 				},
@@ -1892,7 +2109,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "users operations"
 		},
 		{
 			"name": "water",
@@ -2767,7 +2985,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/water/day?date=2025-03-12",
+							"raw": "{{base_url}}/water/day?date=2025-03-16",
 							"host": [
 								"{{base_url}}"
 							],
@@ -2778,7 +2996,7 @@
 							"query": [
 								{
 									"key": "date",
-									"value": "2025-03-12"
+									"value": "2025-03-16"
 								}
 							]
 						},
@@ -3186,10 +3404,105 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 401,\n    \"message\": \"UnauthorizedError\",\n    \"data\": {\n        \"message\": \"Please provide Authorization header\"\n    }\n}"
+						},
+						{
+							"name": "getWaterMonth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/water/month?month=2025-15",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"water",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "2025-15"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 16 Mar 2025 11:52:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"6d-Ul61O0fFqviwNKjaJZNLzFXtLqg\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "f70c1d69-f30e-467d"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "92140bab2c0777bc-KBP"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"BadRequestError\",\n    \"data\": {\n        \"message\": \"Request error: parameter has an invalid value\"\n    }\n}"
 						}
 					]
 				}
-			]
+			],
+			"description": "water operations"
 		},
 		{
 			"name": "auth",
@@ -3404,7 +3717,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "google oauth operations"
 		}
 	],
 	"auth": {
