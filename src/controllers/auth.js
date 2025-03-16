@@ -178,15 +178,44 @@ export const getGoogleOAuthUrlController = async (req, res) => {
   });
 };
 
-export const loginWithGoogleController = async (req, res) => {
-  const session = await loginOrSignupWithGoogle(req.body.code);
-  setupSession(res, session);
+// export const loginWithGoogleController = async (req, res) => {
+//   const code = req.query.code;
+//   if (!code) {
+//     return res.status(400).json({ message: 'Code not provided' });
+//   }
+//   console.log('Google OAuth Code:', code);
+//   try {
+//     const session = await loginOrSignupWithGoogle(code);
+//     setupSession(res, session);
 
-  res.json({
-    status: 200,
-    message: 'Successfully logged in via Google OAuth!',
-    data: {
-      accessToken: session.accessToken,
-    },
-  });
+//     res.redirect(
+//       `https://your-frontend-domain.com/auth/success?token=${token}`,
+//     );
+//   } catch (error) {
+//     console.error(error);
+//     res.redirect(
+//       `https://your-frontend-domain.com/login?error=exchange_failed`,
+//     );
+//   }
+// };
+
+export const loginWithGoogleController = async (req, res) => {
+  const code = req.query.code;
+  if (!code) {
+    return res.status(400).json({ message: 'Code not provided' });
+  }
+
+  console.log('Google OAuth Code:', code); // Лог для перевірки коду
+
+  try {
+    const session = await loginOrSignupWithGoogle(code);
+    setupSession(res, session);
+
+    res.redirect(
+      `https://localhost:5173/auth/success?token=${session.accessToken}`,
+    );
+  } catch (error) {
+    console.error('Google OAuth Error:', error.response?.data || error);
+    res.redirect(`https://localhost:3000/login?error=exchange_failed`);
+  }
 };
