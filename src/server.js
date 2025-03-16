@@ -13,6 +13,7 @@ import { swaggerDocs } from './middlewares/swaggerDocs.js';
 import router from './routers/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
+const FRONTEND_URL = getEnvVar('FRONTEND_URL', 'http://localhost:5173');
 //const APP_DOMAIN = getEnvVar('APP_DOMAIN');
 
 export const startServer = () => {
@@ -42,6 +43,7 @@ export const startServer = () => {
       'http://localhost:3000', // local swagger
       'https://project-aqt-api-testing.onrender.com', // swagger
       'http://localhost:5173', // local frontend
+      FRONTEND_URL,
       'https://aqua-track-front-group-five.vercel.app',
     ],
     credentials: true,
